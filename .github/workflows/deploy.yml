@@ -42,5 +42,5 @@ jobs:
         run: |
           curl -X POST -H "Content-Type: application/json" \
           -d '{"status":"deploy_complete"}' \
-          https://coretexela.app.n8n.cloud/webhook/0bb720de-3714-42f6-b651-4fc13e90f59b
+          https://coretexela.app.n8n.cloud/webhook/0880b90a-873f-4e7c-9175-a40b8342a56c
 
