@@ -44,7 +44,12 @@ jobs:
 
       - name: Notify n8n webhook
         run: |
+          FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+          COMMIT="${{ github.event.head_commit.message }}"
+          DATE=$(date)
+
           curl -X POST \
           -H "Content-Type: application/json" \
-          -d "{\"commit\":\"${{ github.event.head_commit.message }}\", \"time\":\"$(date)\"}" \
-          https://coretexela.app.n8n.cloud/webhook/deploy-event
+          -d "{\"commit\":\"$COMMIT\",\"time\":\"$DATE\",\"files\":\"$FILES\"}" \
+          https://coretexela.app.n8n.cloud/webhook/content-alert
+
