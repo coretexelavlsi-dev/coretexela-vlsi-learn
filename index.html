@@ -1,197 +1,241 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8" />
-  <title>CORETEXELA | Ignite Innovation For Future</title>
+<meta charset="UTF-8" />
+<title>CORETEXELA | Ignite Innovation For Future</title>
 
-  <style>
-    body{
-      margin:0;
-      padding:0;
-      overflow:hidden;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      font-family:Arial, sans-serif;
+<style>
+  body{
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    font-family:Arial, sans-serif;
+    text-align:center;
 
-      /* purple + gold premium gradient */
-      background:linear-gradient(145deg,#1b0033,#3b007a,#6a0dad,#9b30ff,#e6ad00,#ffcc33);
-      background-size:400% 400%;
-      animation:gradientShift 16s ease infinite;
-      color:#ffffff;
-      position:relative;
-    }
+    background:linear-gradient(145deg,#1b0033,#3b007a,#6a0dad,#9b30ff,#e6ad00,#ffcc33);
+    background-size:400% 400%;
+    animation:gradientShift 16s ease infinite;
+    color:#ffffff;
+    position:relative;
+  }
 
-    @keyframes gradientShift{
-      0%{background-position:0% 50%;}
-      50%{background-position:100% 50%;}
-      100%{background-position:0% 50%;}
-    }
+  @keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
 
-    /* LOGO improvements */
-    #logo{
-      width:240px;
-      height:auto;
-      z-index:5;
-      filter:
-        drop-shadow(0px 0px 10px rgba(255,255,255,0.4))
-        drop-shadow(0px 0px 20px rgba(255,204,0,0.7))
-        drop-shadow(0px 0px 28px rgba(255,170,0,0.9));
-      animation:glow 3s ease-in-out infinite alternate;
-      border-radius:20px;
-    }
+  #logo{
+    width:260px;
+    height:auto;
+    margin-top:-20px;
+    z-index:5;
+    filter:
+      drop-shadow(0 0 10px rgba(255,255,255,0.5))
+      drop-shadow(0 0 24px rgba(255,204,0,0.8));
+    animation:pulseLogo 3s infinite alternate ease-in-out;
+  }
 
-    @keyframes glow{
-      0%  { opacity:0.9; transform:scale(1);}
-      100%{ opacity:1; transform:scale(1.08);}
-    }
+  @keyframes pulseLogo{
+    0%{transform:scale(1);}
+    100%{transform:scale(1.08);}
+  }
 
-    h1{
-      font-size:50px;
-      margin:10px;
-      letter-spacing:3px;
-      z-index:5;
-    }
+  h1{font-size:55px;margin:10px;letter-spacing:4px;z-index:5;}
+  h3{margin:4px;font-weight:normal;z-index:5;}
 
-    h3{
-      margin:6px;
-      z-index:5;
-    }
+  #typewriter{
+    font-size:32px;
+    margin-top:20px;
+    border-right:4px solid rgba(255,255,255,0.9);
+    white-space:nowrap;
+    overflow:hidden;
+    width:0;
+    animation:typing 3s steps(20,end) forwards,cursorBlink .7s infinite;
+    z-index:5;
+  }
+  @keyframes typing{from{width:0;}to{width:260px;}}
+  @keyframes cursorBlink{50%{border-color:transparent;}}
 
-    /* Typewriter */
-    #typewriter{
-      font-size:30px;
-      margin-top:20px;
-      border-right:4px solid rgba(255,255,255,0.9);
-      white-space:nowrap;
-      overflow:hidden;
-      width:0;
-      animation:typing 3s steps(20,end) forwards,cursorBlink .7s infinite;
-      z-index:5;
-    }
+  .no-float-zone{
+    position:absolute;
+    width:480px;
+    height:440px;
+    top:50%;
+    transform:translateY(-50%);
+    background:transparent;
+    z-index:4;
+  }
 
-    @keyframes typing{from{width:0;}to{width:240px;}}
-    @keyframes cursorBlink{50%{border-color:transparent;}}
+  /* chatbot button */
+  .chat-btn{
+    margin-top:25px;
+    padding:12px 32px;
+    border:none;
+    border-radius:26px;
+    background:#ffcc33;
+    color:#3d0066;
+    font-weight:bold;
+    cursor:pointer;
+    z-index:5;
+    box-shadow:0 0 14px rgba(255,204,0,0.7);
+    transition:.3s;
+  }
+  .chat-btn:hover{transform:scale(1.1);}
 
-    /* math symbols floating around window */
-    .symbol{
-      position:absolute;
-      font-size:28px;
-      color:rgba(255,215,0,0.8); /* gold */
-      opacity:0.4;
-      animation:float 6.5s infinite ease-in-out;
-      pointer-events:none;
-    }
+  /* ************** modal chatbot ************** */
+  .modal{
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(4px);
+    z-index:10;
+  }
 
-    @keyframes float{
-      0%{transform:translateY(100vh) rotate(0deg);}
-      100%{transform:translateY(-120vh) rotate(360deg);}
-    }
+  .chat-box{
+    background:#ffffff;
+    padding:25px;
+    width:350px;
+    border-radius:20px;
+    color:#3d0066;
+    text-align:left;
+    box-shadow:0 0 18px rgba(255,204,0,0.8);
+  }
 
-    /* safe zone around logo: symbols stay outside */
-    .no-float-zone{
-      position:absolute;
-      width:460px;
-      height:420px;
-      background:transparent;
-      top:50%;
-      transform:translateY(-50%);
-      z-index:4;
-    }
+  /* roadmap */
+  .timeline{
+    position:absolute;
+    bottom:35px;
+    display:flex;
+    gap:30px;
+    opacity:0;
+    animation:fadeIn 2s forwards 3s;
+    z-index:5;
+  }
 
-    /* chatbot button */
-    .chat-btn{
-      margin-top:18px;
-      padding:12px 30px;
-      border:none;
-      border-radius:28px;
-      background:#ffcc33;
-      color:#4b007a;
-      font-weight:bold;
-      cursor:pointer;
-      z-index:5;
-      box-shadow:0 0 15px rgba(255,204,0,0.7);
-      transition:.3s;
-    }
-    .chat-btn:hover{
-      background:#ffe680;
-      transform:scale(1.08);
-    }
+  .step{
+    padding:10px 22px;
+    border-radius:22px;
+    background:rgba(0,0,0,0.28);
+    border:1px solid rgba(255,215,0,0.6);
+    color:#ffcc33;
+    transition:.3s;
+    cursor:pointer;
+  }
+  .step:hover{transform:scale(1.13);}
 
-    /* roadmap */
-    .timeline{
-      position:absolute;
-      bottom:35px;
-      display:flex;
-      gap:30px;
-      opacity:0;
-      animation:fadeIn 2.4s forwards 2.5s;
-      z-index:5;
-    }
+  @keyframes fadeIn{to{opacity:1;}}
 
-    .step{
-      padding:10px 22px;
-      border-radius:22px;
-      background:rgba(0,0,0,0.28);
-      backdrop-filter:blur(4px);
-      color:#ffcc33;
-      border:1px solid rgba(255,215,0,0.6);
-      animation:pulse 2.5s infinite alternate;
-    }
+  /* floating symbols */
+  .symbol{
+    position:absolute;
+    font-size:30px;
+    color:rgba(255,215,0,0.85);
+    opacity:0.4;
+    animation:float 7.0s infinite ease-in-out;
+    pointer-events:none;
+  }
 
-    @keyframes pulse{100%{transform:scale(1.12);}}
-    @keyframes fadeIn{to{opacity:1;}}
-  </style>
+  @keyframes float{
+    0%{transform:translateY(100vh) rotate(0deg);}
+    100%{transform:translateY(-120vh) rotate(360deg);}
+  }
+
+  /* particle trails following cursor */
+  .trail{
+    position:absolute;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.9);
+    pointer-events:none;
+    animation:trailFade 1s forwards;
+  }
+
+  @keyframes trailFade{
+    from{opacity:1;transform:scale(1);}
+    to{opacity:0;transform:scale(3);}
+  }
+</style>
 </head>
 
 <body>
 
-  <!-- SAFE ZONE so symbols don't overlap -->
-  <div class="no-float-zone"></div>
+<div class="no-float-zone"></div>
 
-  <img src="logo.png" id="logo" />
+<img src="logo.png" id="logo" />
 
-  <h1>CORETEXELA</h1>
-  <h3>Ignite Innovation For Future</h3>
-  <div id="typewriter">Coming Soon…</div>
+<h1>CORETEXELA</h1>
+<h3>Ignite Innovation For Future</h3>
+<div id="typewriter">Coming Soon…</div>
 
-  <button class="chat-btn" onclick="alert('AI Chatbot Coming Soon 🚀')">
-    Launch AI Chatbot
-  </button>
+<button class="chat-btn" onclick="document.getElementById('modal').style.display='flex'">
+  Launch AI Chatbot
+</button>
 
-  <div class="timeline">
-    <div class="step">Stage-1 Setup</div>
-    <div class="step">Stage-2 Automations</div>
-    <div class="step">Stage-3 Platform Live</div>
+<div id="modal" class="modal">
+  <div class="chat-box">
+    <b>CORETEXELA AI Agent 🤖</b><br><br>
+    <p>This chatbot backend will connect to:</p>
+    <ul>
+      <li>AI engine (LLM)</li>
+      <li>learning content database</li>
+      <li>course recommendation engine</li>
+      <li>student tracking automation</li>
+    </ul>
+    <button onclick="document.getElementById('modal').style.display='none'">Close</button>
   </div>
+</div>
+
+<div class="timeline">
+  <div class="step" onclick="alert('Stage-1 already complete 🎉')">Stage-1 Setup</div>
+  <div class="step" onclick="alert('Stage-2 automations in progress 🚀')">Stage-2 Automations</div>
+  <div class="step" onclick="alert('Platform goes live in Stage-3 🔥')">Stage-3 Platform Live</div>
+</div>
 
 <script>
+// floating math symbols
 const symbols=["+","−","×","÷","%","="];
-
 for(let i=0;i<60;i++){
-  const span=document.createElement("span");
+  let span=document.createElement("span");
   span.className="symbol";
   span.innerText=symbols[Math.floor(Math.random()*symbols.length)];
-
-  // random symbol position except safe zone
   let x,y;
+
   do{
     x=Math.random()*window.innerWidth;
     y=Math.random()*window.innerHeight;
   }while(
-    x>=(window.innerWidth/2-220)&&
-    x<=(window.innerWidth/2+220)&&
-    y>=(window.innerHeight/2-200)&&
-    y<=(window.innerHeight/2+200)
+    x>=(window.innerWidth/2-240)&&
+    x<=(window.innerWidth/2+240)&&
+    y>=(window.innerHeight/2-220)&&
+    y<=(window.innerHeight/2+220)
   );
 
   span.style.left=x+"px";
   span.style.top=y+"px";
-  span.style.animationDelay=Math.random()*4+"s";
+  span.style.animationDelay=Math.random()*3+"s";
   document.body.appendChild(span);
 }
+
+// cursor particle trails
+document.addEventListener("mousemove",e=>{
+  const dot=document.createElement("div");
+  dot.className="trail";
+  dot.style.left=e.pageX+"px";
+  dot.style.top=e.pageY+"px";
+  document.body.appendChild(dot);
+  setTimeout(()=>dot.remove(),900);
+});
 </script>
 
 </body>
