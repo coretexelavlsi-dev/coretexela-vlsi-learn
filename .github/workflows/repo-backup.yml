@@ -1,0 +1,17 @@
+name: Repo Backup Daily
+
+on:
+  schedule:
+    - cron: '30 18 * * *'   # 12:00 AM IST
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Mirror repo
+        run: |
+          git clone --mirror https://github.com/coretexelavlsi-dev/coretexela-vlsi-learn.git
