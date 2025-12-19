@@ -2,11 +2,11 @@ name: Deploy Website
 
 on:
   push:
-    branches: 
+    branches:
       - main
     paths:
-      - '**'
-      - '!README.md'
+      - '**'           # watch all repo updates
+      - '!README.md'   # ignore README edits
 
 permissions:
   contents: write
@@ -14,7 +14,6 @@ permissions:
   id-token: write
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
 
@@ -36,7 +35,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Send deploy metadata to webhook
+      - name: Notify workflow to n8n
         run: |
           COMMIT=$(git log -1 --pretty=%B)
           DATE=$(date)
