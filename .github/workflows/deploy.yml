@@ -37,3 +37,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        
+      - name: Notify n8n webhook
+        run: |
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"status":"deploy_complete"}' \
+          https://coretexela.app.n8n.cloud/webhook-test/0bb720de-3714-42f6-b651-4fc13e90f59b
+
