@@ -42,12 +42,9 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      - name: Notify workflow to n8n webhook
+      - name: Notify n8n webhook
         run: |
-          COMMIT=$(git log -1 --pretty=%B)
-          DATE=$(date)
-
           curl -X POST \
           -H "Content-Type: application/json" \
-          -d "{\"commit\":\"$COMMIT\", \"time\":\"$DATE\"}" \
+          -d "{\"commit\":\"${{ github.event.head_commit.message }}\", \"time\":\"$(date)\"}" \
           https://coretexela.app.n8n.cloud/webhook/deploy-event
