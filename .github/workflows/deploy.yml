@@ -2,18 +2,19 @@ name: Deploy Website
 
 on:
   push:
-    branches:
+    branches: 
       - main
+    paths:
+      - '**'
+      - '!README.md'
 
 permissions:
+  contents: write
   pages: write
   id-token: write
 
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
-
 jobs:
+
   build:
     runs-on: ubuntu-latest
 
@@ -29,18 +30,18 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
-      - name: Notify n8n webhook
-        run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -d '{"status":"deploy_complete"}' \
-          https://coretexela.app.n8n.cloud/webhook/0880b90a-873f-4e7c-9175-a40b8342a56c
 
+      - name: Send deploy metadata to webhook
+        run: |
+          COMMIT=$(git log -1 --pretty=%B)
+          DATE=$(date)
+
+          curl -X POST \
+          -H "Content-Type: application/json" \
+          -d "{\"commit\":\"$COMMIT\", \"time\":\"$DATE\"}" \
+          https://coretexela.app.n8n.cloud/webhook/deploy-event
