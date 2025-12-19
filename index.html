@@ -3,13 +3,69 @@
 <head>
   <meta charset="UTF-8" />
   <title>CORETEXELA - Ignite Innovation For Future</title>
+
+  <style>
+    body {
+      background: #ffffff;
+      overflow: hidden;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    h1, h2 {
+      margin: 5px;
+      color: #111;
+    }
+
+    .floating-shapes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.15);
+      animation: float 6s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(.5);}
+      100% { transform: translateY(-20vh) scale(1.2);}
+    }
+  </style>
 </head>
+
 <body>
-  <center>
-    <h1>CORETEXELA</h1>
-    <h3>Ignite Innovation For Future</h3>
-    <img src="logo.png" width="220" />
-    <h2>Coming Soon...</h2>
-  </center>
+
+  <h1>CORETEXELA</h1>
+  <h3>Ignite Innovation For Future 🚀</h3>
+  <h2 style="margin-top:15px;">Coming Soon...</h2>
+
+  <script>
+    const container = document.createElement("div");
+    container.className = "floating-shapes";
+    document.body.appendChild(container);
+
+    for(let i=0;i<20;i++){
+      const c = document.createElement("div");
+      c.className = "circle";
+      c.style.left = Math.random()*100+"%";
+      c.style.animationDelay = Math.random()*3+"s";
+      container.appendChild(c);
+    }
+  </script>
+
 </body>
 </html>
