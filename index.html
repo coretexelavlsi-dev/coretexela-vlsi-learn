@@ -16,44 +16,51 @@
       height:100vh;
       font-family:Arial, sans-serif;
 
-      /* smoother neon gradient matching logo glow */
-      background:linear-gradient(135deg,#1a0026,#32004b,#4a0080,#7a00b3,#a100e8);
-      background-size:300% 300%;
-      animation:bgShift 15s ease infinite;
+      /* purple + gold premium gradient */
+      background:linear-gradient(145deg,#1b0033,#3b007a,#6a0dad,#9b30ff,#e6ad00,#ffcc33);
+      background-size:400% 400%;
+      animation:gradientShift 16s ease infinite;
       color:#ffffff;
+      position:relative;
     }
 
-    @keyframes bgShift{
+    @keyframes gradientShift{
       0%{background-position:0% 50%;}
       50%{background-position:100% 50%;}
       100%{background-position:0% 50%;}
     }
 
-    /* clean logo bigger + glow + no hard border */
+    /* LOGO improvements */
     #logo{
-      width:200px;
+      width:240px;
       height:auto;
-      border-radius:18px;
-      filter:drop-shadow(0px 0px 18px rgba(255,255,255,0.85));
-      animation:glow 3s infinite alternate ease-in-out;
+      z-index:5;
+      filter:
+        drop-shadow(0px 0px 10px rgba(255,255,255,0.4))
+        drop-shadow(0px 0px 20px rgba(255,204,0,0.7))
+        drop-shadow(0px 0px 28px rgba(255,170,0,0.9));
+      animation:glow 3s ease-in-out infinite alternate;
+      border-radius:20px;
     }
 
     @keyframes glow{
-      0%  { filter:drop-shadow(0px 0px 6px rgba(255,255,255,0.3));}
-      100%{ filter:drop-shadow(0px 0px 20px rgba(255,255,255,0.95));}
+      0%  { opacity:0.9; transform:scale(1);}
+      100%{ opacity:1; transform:scale(1.08);}
     }
 
     h1{
-      font-size:48px;
+      font-size:50px;
       margin:10px;
+      letter-spacing:3px;
+      z-index:5;
     }
 
     h3{
       margin:6px;
-      letter-spacing:1px;
+      z-index:5;
     }
 
-    /* typewriter text improved */
+    /* Typewriter */
     #typewriter{
       font-size:30px;
       margin-top:20px;
@@ -61,52 +68,131 @@
       white-space:nowrap;
       overflow:hidden;
       width:0;
-      animation:
-        typing 2.8s steps(18,end) forwards,
-        cursorBlink .7s infinite;
+      animation:typing 3s steps(20,end) forwards,cursorBlink .7s infinite;
+      z-index:5;
     }
 
-    @keyframes typing{from{width:0;}to{width:235px;}}
+    @keyframes typing{from{width:0;}to{width:240px;}}
     @keyframes cursorBlink{50%{border-color:transparent;}}
 
-    /* floating math symbols */
+    /* math symbols floating around window */
     .symbol{
       position:absolute;
-      font-size:26px;
-      opacity:0.45;
-      color:white;
-      animation:float 6s infinite ease-in-out;
+      font-size:28px;
+      color:rgba(255,215,0,0.8); /* gold */
+      opacity:0.4;
+      animation:float 6.5s infinite ease-in-out;
+      pointer-events:none;
     }
 
     @keyframes float{
       0%{transform:translateY(100vh) rotate(0deg);}
       100%{transform:translateY(-120vh) rotate(360deg);}
     }
+
+    /* safe zone around logo: symbols stay outside */
+    .no-float-zone{
+      position:absolute;
+      width:460px;
+      height:420px;
+      background:transparent;
+      top:50%;
+      transform:translateY(-50%);
+      z-index:4;
+    }
+
+    /* chatbot button */
+    .chat-btn{
+      margin-top:18px;
+      padding:12px 30px;
+      border:none;
+      border-radius:28px;
+      background:#ffcc33;
+      color:#4b007a;
+      font-weight:bold;
+      cursor:pointer;
+      z-index:5;
+      box-shadow:0 0 15px rgba(255,204,0,0.7);
+      transition:.3s;
+    }
+    .chat-btn:hover{
+      background:#ffe680;
+      transform:scale(1.08);
+    }
+
+    /* roadmap */
+    .timeline{
+      position:absolute;
+      bottom:35px;
+      display:flex;
+      gap:30px;
+      opacity:0;
+      animation:fadeIn 2.4s forwards 2.5s;
+      z-index:5;
+    }
+
+    .step{
+      padding:10px 22px;
+      border-radius:22px;
+      background:rgba(0,0,0,0.28);
+      backdrop-filter:blur(4px);
+      color:#ffcc33;
+      border:1px solid rgba(255,215,0,0.6);
+      animation:pulse 2.5s infinite alternate;
+    }
+
+    @keyframes pulse{100%{transform:scale(1.12);}}
+    @keyframes fadeIn{to{opacity:1;}}
   </style>
 </head>
 
 <body>
 
-  <!-- Logo -->
+  <!-- SAFE ZONE so symbols don't overlap -->
+  <div class="no-float-zone"></div>
+
   <img src="logo.png" id="logo" />
 
   <h1>CORETEXELA</h1>
   <h3>Ignite Innovation For Future</h3>
-
   <div id="typewriter">Coming Soon…</div>
 
-  <!-- floating symbols -->
-  <script>
-    const symbols=["+","−","×","÷","%","="];
-    for(let i=0;i<50;i++){
-      const span=document.createElement("span");
-      span.className="symbol";
-      span.innerText=symbols[Math.floor(Math.random()*symbols.length)];
-      span.style.left=Math.random()*100+"%";
-      span.style.animationDelay=Math.random()*4+"s";
-      document.body.appendChild(span);
-    }
-  </script>
+  <button class="chat-btn" onclick="alert('AI Chatbot Coming Soon 🚀')">
+    Launch AI Chatbot
+  </button>
+
+  <div class="timeline">
+    <div class="step">Stage-1 Setup</div>
+    <div class="step">Stage-2 Automations</div>
+    <div class="step">Stage-3 Platform Live</div>
+  </div>
+
+<script>
+const symbols=["+","−","×","÷","%","="];
+
+for(let i=0;i<60;i++){
+  const span=document.createElement("span");
+  span.className="symbol";
+  span.innerText=symbols[Math.floor(Math.random()*symbols.length)];
+
+  // random symbol position except safe zone
+  let x,y;
+  do{
+    x=Math.random()*window.innerWidth;
+    y=Math.random()*window.innerHeight;
+  }while(
+    x>=(window.innerWidth/2-220)&&
+    x<=(window.innerWidth/2+220)&&
+    y>=(window.innerHeight/2-200)&&
+    y<=(window.innerHeight/2+200)
+  );
+
+  span.style.left=x+"px";
+  span.style.top=y+"px";
+  span.style.animationDelay=Math.random()*4+"s";
+  document.body.appendChild(span);
+}
+</script>
 
 </body>
 </html>
