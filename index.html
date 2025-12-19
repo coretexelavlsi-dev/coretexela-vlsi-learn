@@ -15,99 +15,79 @@
       align-items:center;
       height:100vh;
       font-family:Arial, sans-serif;
-      background:linear-gradient(120deg,#b5179e,#560bad,#480ca8,#3a0ca3,#3f37c9,#4895ef,#4cc9f0);
-      background-size:400% 400%;
-      animation:gradientShift 15s ease infinite;
-      color:#fff;
+
+      /* smoother neon gradient matching logo glow */
+      background:linear-gradient(135deg,#1a0026,#32004b,#4a0080,#7a00b3,#a100e8);
+      background-size:300% 300%;
+      animation:bgShift 15s ease infinite;
+      color:#ffffff;
     }
 
-    @keyframes gradientShift{
+    @keyframes bgShift{
       0%{background-position:0% 50%;}
       50%{background-position:100% 50%;}
       100%{background-position:0% 50%;}
     }
 
-    /* glowing logo animation */
+    /* clean logo bigger + glow + no hard border */
     #logo{
-      width:140px;
-      animation:glow 3s ease-in-out infinite alternate;
-      filter:drop-shadow(0px 0px 6px white);
+      width:200px;
+      height:auto;
+      border-radius:18px;
+      filter:drop-shadow(0px 0px 18px rgba(255,255,255,0.85));
+      animation:glow 3s infinite alternate ease-in-out;
     }
 
     @keyframes glow{
-      0%{filter:drop-shadow(0px 0px 3px #fff);}
-      100%{filter:drop-shadow(0px 0px 12px #fff);}
+      0%  { filter:drop-shadow(0px 0px 6px rgba(255,255,255,0.3));}
+      100%{ filter:drop-shadow(0px 0px 20px rgba(255,255,255,0.95));}
     }
 
-    h1{font-size:45px;margin:12px;}
-    h3{margin:4px;}
+    h1{
+      font-size:48px;
+      margin:10px;
+    }
 
-    /* typewriter */
+    h3{
+      margin:6px;
+      letter-spacing:1px;
+    }
+
+    /* typewriter text improved */
     #typewriter{
-      font-size:26px;
-      margin-top:15px;
-      border-right:3px solid #fff;
+      font-size:30px;
+      margin-top:20px;
+      border-right:4px solid rgba(255,255,255,0.9);
       white-space:nowrap;
       overflow:hidden;
       width:0;
-      animation:typing 3s steps(20,end) forwards,blink 0.6s infinite;
+      animation:
+        typing 2.8s steps(18,end) forwards,
+        cursorBlink .7s infinite;
     }
 
-    @keyframes typing{from{width:0;}to{width:220px;}}
-    @keyframes blink{50%{border-color:transparent;}}
+    @keyframes typing{from{width:0;}to{width:235px;}}
+    @keyframes cursorBlink{50%{border-color:transparent;}}
 
-    /* roadmap timeline container */
-    .timeline{
+    /* floating math symbols */
+    .symbol{
       position:absolute;
-      bottom:30px;
-      display:flex;
-      gap:30px;
-      opacity:0;
-      animation:fadeIn 2s forwards 3.5s;
+      font-size:26px;
+      opacity:0.45;
+      color:white;
+      animation:float 6s infinite ease-in-out;
     }
 
-    .step{
-      padding:10px 18px;
-      border-radius:20px;
-      background:rgba(255,255,255,0.15);
-      backdrop-filter:blur(4px);
-      animation:pulse 2.8s infinite alternate ease-in-out;
+    @keyframes float{
+      0%{transform:translateY(100vh) rotate(0deg);}
+      100%{transform:translateY(-120vh) rotate(360deg);}
     }
-
-    @keyframes fadeIn{to{opacity:1;}}
-    @keyframes pulse{
-      0%{transform:scale(1);}
-      100%{transform:scale(1.12);}
-    }
-
-    /* chatbot button */
-    .chat-btn{
-      margin-top:18px;
-      padding:10px 20px;
-      border:none;
-      border-radius:25px;
-      background:#fff;
-      color:#6200ea;
-      font-weight:bold;
-      cursor:pointer;
-      animation:pop 1.4s ease-in-out infinite;
-    }
-
-    @keyframes pop{
-      0%{transform:translateY(0);}
-      100%{transform:translateY(-6px);}
-    }
-
-    canvas{position:absolute;top:0;left:0;}
   </style>
 </head>
 
 <body>
 
-  <!-- Particle canvas -->
-  <canvas id="particles"></canvas>
-
-  <!-- glowing logo -->
+  <!-- Logo -->
   <img src="logo.png" id="logo" />
 
   <h1>CORETEXELA</h1>
@@ -115,50 +95,18 @@
 
   <div id="typewriter">Coming Soon…</div>
 
-  <!-- chatbot entry -->
-  <button class="chat-btn" onclick="alert('AI Chatbot Coming Soon 🚀')">
-    Launch AI Chatbot
-  </button>
-
-  <!-- roadmap timeline -->
-  <div class="timeline">
-    <div class="step">Stage-1 Setup</div>
-    <div class="step">Stage-2 Automations</div>
-    <div class="step">Stage-3 Platform Live</div>
-  </div>
-
-<script>
-// particles
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-canvas.width=innerWidth; canvas.height=innerHeight;
-
-const particles=[];
-for(let i=0;i<55;i++){
-  particles.push({
-    x:Math.random()*canvas.width,
-    y:Math.random()*canvas.height,
-    r:Math.random()*3+1,
-    dx:(Math.random()-0.5)*1.2,
-    dy:(Math.random()-0.5)*1.2
-  });
-}
-
-function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  particles.forEach(p=>{
-    ctx.beginPath();
-    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle="rgba(255,255,255,0.5)";
-    ctx.fill();
-    p.x+=p.dx; p.y+=p.dy;
-    if(p.x<0||p.x>canvas.width)p.dx*=-1;
-    if(p.y<0||p.y>canvas.height)p.dy*=-1;
-  });
-  requestAnimationFrame(animate);
-}
-animate();
-</script>
+  <!-- floating symbols -->
+  <script>
+    const symbols=["+","−","×","÷","%","="];
+    for(let i=0;i<50;i++){
+      const span=document.createElement("span");
+      span.className="symbol";
+      span.innerText=symbols[Math.floor(Math.random()*symbols.length)];
+      span.style.left=Math.random()*100+"%";
+      span.style.animationDelay=Math.random()*4+"s";
+      document.body.appendChild(span);
+    }
+  </script>
 
 </body>
 </html>
