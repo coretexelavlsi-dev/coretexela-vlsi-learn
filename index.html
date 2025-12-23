@@ -9,187 +9,185 @@
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(180deg, #3a0a6a, #5b1aa3);
+      background: linear-gradient(135deg, #2a004f, #4b0082);
       color: white;
       text-align: center;
     }
 
-    header {
-      padding: 80px 20px 60px;
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
     }
 
-    header img {
-      width: 160px;
+    .logo {
+      width: 140px;
+      height: 140px;
       margin-bottom: 20px;
-      box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);
-      border-radius: 12px;
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(255, 214, 10, 0.6);
     }
 
     h1 {
       font-size: 42px;
-      margin-bottom: 10px;
+      margin: 10px 0;
       letter-spacing: 2px;
     }
 
-    h2 {
-      font-weight: normal;
-      margin-bottom: 40px;
+    .tagline {
+      font-size: 18px;
       opacity: 0.9;
+      margin-bottom: 40px;
     }
 
     .cta-btn {
-      display: inline-block;
-      padding: 14px 32px;
-      background: gold;
-      color: #3a0a6a;
-      font-size: 18px;
+      background: #ffd60a;
+      color: #2a004f;
+      padding: 15px 36px;
       border-radius: 30px;
       text-decoration: none;
+      font-size: 18px;
       font-weight: bold;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
 
     .cta-btn:hover {
-      transform: scale(1.05);
+      background: #ffea00;
+      transform: translateY(-3px);
     }
 
-    section {
+    .section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
+    .section h2 {
+      font-size: 30px;
+      margin-bottom: 30px;
+    }
+
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      margin-top: 40px;
     }
 
     .card {
       background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 14px;
+      padding: 25px;
+      border-radius: 16px;
       text-align: left;
     }
 
     .card h3 {
-      color: gold;
-    }
-
-    .learn-section {
-      background: rgba(0,0,0,0.25);
-      padding: 50px 20px;
-      margin-top: 40px;
+      color: #ffd60a;
+      margin-bottom: 10px;
     }
 
     footer {
-      padding: 40px 20px;
-      opacity: 0.8;
+      padding: 20px;
       font-size: 14px;
+      opacity: 0.8;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.png" alt="CORETEXELA Logo" />
-  <h1>CORETEXELA</h1>
-  <h2>Ignite Innovation For Future</h2>
+  <!-- HERO SECTION -->
+  <div class="hero">
+    <img src="logo.png" alt="CORETEXELA Logo" class="logo" />
 
-  <!-- MAIN CTA -->
-  <a href="lessons.html" class="cta-btn">Start Learning</a>
-</header>
+    <h1>CORETEXELA</h1>
+    <p class="tagline">Ignite Innovation For Future</p>
 
-<section>
-  <h2>What is CORETEXELA?</h2>
-  <p>
-    CORETEXELA is a free VLSI learning platform designed to help students and
-    engineers understand digital electronics and chip design concepts step by step.
-  </p>
-
-  <p>
-    No shortcuts. No confusion. Just structured learning aligned with real semiconductor workflows.
-  </p>
-
-  <div class="cards">
-    <div class="card">
-      <h3>✨ Free & Open</h3>
-      <p>No fees. No paywalls. Knowledge should be accessible to everyone.</p>
-    </div>
-
-    <div class="card">
-      <h3>📚 Structured Lessons</h3>
-      <p>Carefully sequenced topics from basics to advanced concepts.</p>
-    </div>
-
-    <div class="card">
-      <h3>🧭 Guided Learning</h3>
-      <p>Clear explanations, visuals, and self-checks for confidence.</p>
-    </div>
-
-    <div class="card">
-      <h3>💼 Job-Oriented</h3>
-      <p>Concepts aligned with interviews, tools, and industry design flows.</p>
-    </div>
+    <!-- SINGLE ENTRY POINT -->
+    <a href="content/lessons/L001.html" class="cta-btn">
+      Start Learning
+    </a>
   </div>
-</section>
 
-<section class="learn-section">
-  <h2>What You Will Learn</h2>
+  <!-- WHAT IS CORETEXELA -->
+  <div class="section">
+    <h2>What is CORETEXELA?</h2>
+    <p>
+      CORETEXELA is a free learning platform designed to help students and engineers
+      understand VLSI and digital design concepts step-by-step — from beginner
+      fundamentals to industry-ready knowledge.
+    </p>
+  </div>
 
-  <div class="cards">
-    <div class="card">
-      <h3>Beginner</h3>
-      <ul>
-        <li>Why VLSI?</li>
-        <li>Digital electronics fundamentals</li>
-        <li>Boolean algebra & number systems</li>
-        <li>Logic gates & flip-flops</li>
-      </ul>
-    </div>
+  <!-- PLATFORM HIGHLIGHTS -->
+  <div class="section">
+    <div class="cards">
+      <div class="card">
+        <h3>✨ Free & Open</h3>
+        <p>No fees. No paywalls. Knowledge should be accessible to everyone.</p>
+      </div>
 
-    <div class="card">
-      <h3>Intermediate</h3>
-      <ul>
-        <li>RTL concepts</li>
-        <li>Verilog basics</li>
-        <li>Simulation & waveforms</li>
-        <li>Synthesis flow</li>
-      </ul>
-    </div>
+      <div class="card">
+        <h3>📚 Structured Lessons</h3>
+        <p>Carefully sequenced topics from basics to advanced concepts.</p>
+      </div>
 
-    <div class="card">
-      <h3>Pro Level</h3>
-      <ul>
-        <li>Timing concepts</li>
-        <li>STA basics</li>
-        <li>Physical design overview</li>
-        <li>Industry design flow</li>
-      </ul>
+      <div class="card">
+        <h3>🎯 Guided Learning</h3>
+        <p>Clear explanations, visuals, and self-checks for confidence.</p>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Job-Oriented</h3>
+        <p>Concepts aligned with interviews, tools, and real design flows.</p>
+      </div>
     </div>
   </div>
 
-  <br/><br/>
-  <!-- SECONDARY CTA -->
-  <a href="lessons.html" class="cta-btn">View All Lessons</a>
-</section>
+  <!-- WHAT YOU WILL LEARN -->
+  <div class="section">
+    <h2>What You Will Learn</h2>
 
-<section>
-  <h2>AI Study Assistant (Coming Soon)</h2>
-  <p>
-    CORETEXELA will introduce an AI-powered assistant to guide learning,
-    recommend lessons, and clarify concepts.
-  </p>
-  <p>🚧 Currently under development.</p>
-</section>
+    <div class="cards">
+      <div class="card">
+        <h3>Beginner</h3>
+        <ul>
+          <li>Why VLSI?</li>
+          <li>Digital electronics fundamentals</li>
+          <li>Boolean algebra & number systems</li>
+          <li>Logic gates & flip-flops</li>
+        </ul>
+      </div>
 
-<footer>
-  <p>CORETEXELA – Ignite Innovation For Future</p>
-  <p>© 2025 CORETEXELA. All Rights Reserved.</p>
-</footer>
+      <div class="card">
+        <h3>Intermediate</h3>
+        <ul>
+          <li>RTL concepts</li>
+          <li>Verilog basics</li>
+          <li>Simulation & waveforms</li>
+          <li>Synthesis flow</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Pro Level</h3>
+        <ul>
+          <li>Timing concepts</li>
+          <li>STA basics</li>
+          <li>Physical design overview</li>
+          <li>Industry design flow</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 CORETEXELA — Ignite Innovation For Future
+  </footer>
 
 </body>
 </html>
