@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: true
 
 jobs:
@@ -27,22 +27,10 @@ jobs:
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload site artifact
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-
-      - name: Notify n8n webhook
-        run: |
-          curl -X POST \
-          -H "Content-Type: application/json" \
-          -d '{
-            "project": "CORETEXELA",
-            "status": "deploy_success",
-            "branch": "main",
-            "timestamp": "'"$(date -u +"%Y-%m-%dT%H:%M:%SZ")"'"
-          }' \
-          https://coretexela.app.n8n.cloud/webhook/0880b90a-873f-4e7c-9175-a40b8342a56c
