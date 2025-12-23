@@ -1,160 +1,227 @@
 /* ===============================
-   CORE VARIABLES (LOGO COLORS)
-================================ */
+   CORETEXELA – Professional Theme
+   Semiconductor / Institute Grade
+   =============================== */
+
+/* ---------- COLOR SYSTEM ---------- */
 :root {
-  --bg: #2a004f;          /* Deep Purple */
-  --card: #1a0033;        /* Dark Purple */
-  --text: #f5f3ff;        /* Soft White */
-  --muted: #c4b5fd;       /* Lavender */
-  --accent: #facc15;      /* GOLD */
+  /* Backgrounds */
+  --bg-main: #0b1c2d;        /* deep semiconductor blue */
+  --bg-panel: #102a43;      /* cards / sections */
+  --bg-sidebar: #081624;    /* sidebar */
+
+  /* Accents */
+  --accent: #2ec4b6;        /* teal tech accent */
+  --accent-soft: #1fa3a3;
+  --cta: #f4c430;           /* muted gold (buttons only) */
+
+  /* Text */
+  --text-main: #e6edf3;
+  --text-muted: #9fb3c8;
+
+  /* Borders / Shadows */
+  --border-soft: rgba(255,255,255,0.06);
+  --shadow-soft: 0 12px 32px rgba(0,0,0,0.35);
 }
 
-/* ===============================
-   RESET
-================================ */
+/* ---------- GLOBAL ---------- */
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  display: flex;
-  min-height: 100vh;
-  line-height: 1.6;
+  margin: 0;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
+  line-height: 1.65;
 }
 
-/* ===============================
-   SIDEBAR
-================================ */
+/* ---------- LINKS ---------- */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-soft);
+}
+
+/* ---------- HOME PAGE ---------- */
+.home,
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  width: 140px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 24px rgba(46,196,182,0.35);
+}
+
+h1 {
+  font-size: 42px;
+  letter-spacing: 2px;
+  margin: 10px 0;
+}
+
+.tagline {
+  color: var(--text-muted);
+  font-size: 18px;
+  margin-bottom: 36px;
+}
+
+/* CTA */
+.cta-btn,
+.start-btn {
+  display: inline-block;
+  background: var(--cta);
+  color: #102a43;
+  padding: 14px 36px;
+  border-radius: 30px;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-btn:hover,
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.45);
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+.section h2 {
+  font-size: 30px;
+  margin-bottom: 30px;
+  color: var(--text-main);
+}
+
+/* ---------- CARDS ---------- */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: var(--bg-panel);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.card h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+/* ---------- SIDEBAR (LESSONS) ---------- */
 .sidebar {
-  width: 240px;
-  background: #12001f;
-  padding: 1.2rem;
   position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
   height: 100vh;
+  background: var(--bg-sidebar);
+  padding: 24px 18px;
+  border-right: 1px solid var(--border-soft);
 }
 
 .sidebar h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
   color: var(--accent);
-  margin-bottom: 1rem;
 }
 
 .sidebar a {
   display: block;
-  color: var(--muted);
-  text-decoration: none;
-  padding: 0.5rem 0.7rem;
+  padding: 10px 14px;
+  margin-bottom: 8px;
   border-radius: 8px;
-  transition: all 0.25s ease;
+  color: var(--text-main);
+  font-size: 14px;
 }
 
 .sidebar a:hover,
 .sidebar a.active {
-  background: rgba(250, 204, 21, 0.15);
-  color: var(--text);
-}
-
-/* ===============================
-   MAIN CONTENT
-================================ */
-.content {
-  margin-left: 260px;
-  padding: 2rem;
-  max-width: 900px;
-}
-
-/* ===============================
-   LESSON CARDS
-================================ */
-.lesson-card {
-  background: var(--card);
-  border-radius: 16px;
-  padding: 1.6rem;
-  margin-bottom: 1.6rem;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.lesson-card:hover {
-  transform: translateY(-4px);
-}
-
-/* ===============================
-   HEADINGS
-================================ */
-h1 {
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
-}
-
-h2 {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
-}
-
-h2::after {
-  content: "";
-  width: 40px;
-  height: 3px;
-  background: var(--accent);
-  display: block;
-  margin-top: 6px;
-}
-
-/* ===============================
-   TEXT
-================================ */
-ul {
-  padding-left: 1.2rem;
-}
-
-li {
-  margin-bottom: 0.4rem;
-}
-
-.key-term {
+  background: rgba(46,196,182,0.15);
   color: var(--accent);
-  font-weight: 600;
 }
 
-/* ===============================
-   NAV BUTTONS
-================================ */
+/* ---------- LESSON CONTENT ---------- */
+.content {
+  margin-left: 240px;
+  padding: 40px 30px;
+}
+
+.lesson-card {
+  max-width: 900px;
+  margin-bottom: 30px;
+  background: var(--bg-panel);
+  padding: 26px 28px;
+  border-radius: 16px;
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.lesson-card h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.lesson-card h2 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.lesson-card p,
+.lesson-card li {
+  color: var(--text-muted);
+}
+
+/* ---------- NAV BUTTONS ---------- */
 .nav {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
 }
 
 .nav-btn {
-  border: 1px solid var(--accent);
-  color: var(--accent);
-  padding: 0.45rem 1.2rem;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  padding: 10px 22px;
+  border-radius: 24px;
+  border: 1px solid var(--cta);
+  color: var(--cta);
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .nav-btn:hover {
-  background: var(--accent);
-  color: #1a0033;
+  background: var(--cta);
+  color: #102a43;
+  transform: translateY(-2px);
 }
 
-.nav-btn.disabled {
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-/* ===============================
-   REVEAL ANIMATION
-================================ */
+/* ---------- ANIMATIONS ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
 }
 
 .reveal.show {
@@ -162,32 +229,10 @@ li {
   transform: translateY(0);
 }
 
-/* ===============================
-   FLOATING SYMBOLS (LESSONS)
-================================ */
-.lesson-symbols {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.lesson-symbols span {
-  position: absolute;
-  color: rgba(250,204,21,0.08);
-  font-size: 1.4rem;
-  animation: floatSymbol 28s linear infinite;
-}
-
-@keyframes floatSymbol {
-  from { transform: translateY(100vh) rotate(0deg); }
-  to   { transform: translateY(-120vh) rotate(360deg); }
-}
-
-/* ===============================
-   MOBILE
-================================ */
-@media (max-width: 768px) {
-  .sidebar { display: none; }
-  .content { margin-left: 0; padding: 1rem; }
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 14px;
 }
