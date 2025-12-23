@@ -1,39 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>L005 – Conversions</title>
-<style>
-body{margin:0;font-family:Arial;background:#f6f6fb}
-.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
-.sidebar a{color:#fff;display:block;margin:10px 0}
-.container{margin-left:240px;padding:40px}
-.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px}
-.lesson-nav{display:flex;justify-content:space-between}
-.nav-btn{background:#4b0082;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none}
-</style>
+  <meta charset="UTF-8" />
+  <title>L005 – Combinational Circuits</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<div class="sidebar">
-<a href="L001.html">L001</a><a href="L002.html">L002</a><a href="L003.html">L003</a>
-<a href="L004.html">L004</a><a href="L005.html">L005</a><a href="L006.html">L006</a>
-</div>
 
-<div class="container">
-<h1>Lesson 005 – Number System Conversions</h1>
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a href="L001.html">L001 – Intro</a>
+  <a href="L002.html">L002 – Logic Gates</a>
+  <a href="L003.html">L003 – Boolean Algebra</a>
+  <a href="L004.html">L004 – Number Systems</a>
+  <a class="active" href="L005.html">L005 – Combinational Circuits</a>
+</aside>
 
-<div class="box">
-<p>
-Conversions are required because humans use decimal numbers while
-digital systems operate using binary.
-</p>
-</div>
+<main class="content">
 
-<div class="lesson-nav">
-<a class="nav-btn" href="L004.html">← Previous</a>
-<a class="nav-btn" href="L006.html">Next →</a>
-</div>
-</div>
+<section class="lesson-card reveal">
+  <h1>L005: Combinational Circuits</h1>
+  <p>
+    The output of combinational circuits depends only on present inputs.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Examples</h2>
+  <ul>
+    <li>Half Adder</li>
+    <li>Full Adder</li>
+    <li>Multiplexer</li>
+  </ul>
+</section>
+
+<section class="lesson-card reveal nav">
+  <a class="nav-btn" href="L004.html">⬅ Previous</a>
+  <a class="nav-btn" href="L006.html">Next ➡</a>
+</section>
+
+</main>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
+</script>
+
 </body>
 </html>
