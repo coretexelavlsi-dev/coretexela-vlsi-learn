@@ -5,50 +5,59 @@
   <title>CORETEXELA – Ignite Innovation For Future</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CORETEXELA – Learn Digital Electronics & VLSI from basics with a concept-first approach." />
+  <meta name="description"
+        content="CORETEXELA – Learn Digital Electronics & VLSI from basics with a concept-first, Morris Mano style approach." />
 
   <link rel="stylesheet" href="styles.css" />
 
   <style>
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
       background: var(--bg);
-      min-height: 100vh;
-    }
-
-    .home {
-      text-align: center;
-      max-width: 560px;
-      padding: 1rem;
-    }
-
-    .home h1 {
-      font-size: 2.6rem;
-      margin-bottom: 0.4rem;
       color: var(--text);
+      font-family: inherit;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 3rem 1.5rem;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .hero img {
+      width: 110px;
+      border-radius: 18px;
+      margin-bottom: 1rem;
       animation: floatLogo 4s ease-in-out infinite;
-      text-shadow: 0 0 22px rgba(250,204,21,0.35);
+      box-shadow: 0 0 30px rgba(250,204,21,0.35);
     }
 
     @keyframes floatLogo {
-      0%   { transform: translateY(0); }
-      50%  { transform: translateY(-6px); }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
       100% { transform: translateY(0); }
     }
 
-    .tagline {
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 0 22px rgba(250,204,21,0.35);
+    }
+
+    .hero p {
       color: var(--muted);
-      margin-bottom: 2rem;
       font-size: 1.05rem;
+      margin-bottom: 2rem;
     }
 
     .start-btn {
-      display: inline-block;
       background: var(--accent);
       color: #1a0033;
-      padding: 0.85rem 2.4rem;
+      padding: 0.9rem 2.6rem;
       border-radius: 999px;
       font-weight: 600;
       text-decoration: none;
@@ -57,55 +66,94 @@
 
     .start-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 34px rgba(250,204,21,0.45);
+      box-shadow: 0 16px 36px rgba(250,204,21,0.45);
     }
 
-    .why {
-      margin-top: 3rem;
-      text-align: left;
+    .section {
       background: rgba(0,0,0,0.15);
-      padding: 1.4rem 1.6rem;
-      border-radius: 14px;
+      border-radius: 16px;
+      padding: 1.6rem 1.8rem;
+      margin-bottom: 2rem;
     }
 
-    .why h3 {
-      color: var(--text);
+    .section h2 {
       margin-bottom: 0.6rem;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
-    .why p {
+    .section p {
       color: var(--muted);
+      line-height: 1.65;
       font-size: 0.95rem;
-      line-height: 1.6;
-      margin-bottom: 0.6rem;
+    }
+
+    .section ul {
+      margin-top: 0.8rem;
+      padding-left: 1.2rem;
+    }
+
+    .section li {
+      margin-bottom: 0.4rem;
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
 
-  <div class="home">
-    <h1>CORETEXELA</h1>
-    <div class="tagline">Ignite Innovation For Future</div>
+  <div class="container">
 
-    <a class="start-btn" href="content/lessons/L001.html">
-      Start Learning
-    </a>
+    <!-- HERO -->
+    <div class="hero">
+      <img src="logo.png" alt="CORETEXELA Logo" />
+      <h1>CORETEXELA</h1>
+      <p>Ignite Innovation For Future</p>
 
-    <div class="why">
-      <h3>Why Digital Electronics & VLSI?</h3>
+      <a class="start-btn" href="content/lessons/L001.html">
+        Start Learning
+      </a>
+    </div>
+
+    <!-- WHY VLSI -->
+    <div class="section">
+      <h2>Why Digital Electronics & VLSI?</h2>
       <p>
         Digital electronics is the foundation of all modern technology.
         From processors and memory to embedded systems and AI hardware,
         everything begins with logic gates, number systems, and circuits.
       </p>
       <p>
-        CORETEXELA follows a <b>concept-first learning approach</b>,
-        inspired by Morris Mano — so you understand the fundamentals
-        deeply before moving to advanced VLSI design.
+        Without strong fundamentals, advanced VLSI concepts become
+        difficult and error-prone.
       </p>
     </div>
+
+    <!-- APPROACH -->
+    <div class="section">
+      <h2>How CORETEXELA Teaches</h2>
+      <p>
+        CORETEXELA follows a <b>concept-first learning approach</b>,
+        inspired by the Morris Mano methodology.
+      </p>
+      <ul>
+        <li>Step-by-step theory</li>
+        <li>Clear intuition before equations</li>
+        <li>Worked examples</li>
+        <li>Smooth transition to VLSI & embedded systems</li>
+      </ul>
+    </div>
+
+    <!-- TOOLS / FUTURE -->
+    <div class="section">
+      <h2>What You’ll Be Ready For</h2>
+      <ul>
+        <li>Digital logic & RTL design</li>
+        <li>VLSI fundamentals</li>
+        <li>Verilog & hardware thinking</li>
+        <li>Embedded & core electronics roles</li>
+      </ul>
+    </div>
+
   </div>
 
 </body>
