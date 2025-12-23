@@ -2,190 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CORETEXELA – Ignite Innovation For Future</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: linear-gradient(135deg, #2a004f, #4b0082);
-      color: #ffffff;
-      text-align: center;
-    }
+  <title>CORETEXELA | Learn Digital Electronics & VLSI Fundamentals</title>
 
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 40px 20px;
-    }
+  <!-- SEO -->
+  <meta name="description" content="CORETEXELA is a free learning platform for Digital Electronics and VLSI fundamentals inspired by Morris Mano. Learn logic gates, Boolean algebra, combinational and sequential circuits step by step." />
+  <meta name="keywords" content="Digital Electronics, VLSI, Logic Gates, Boolean Algebra, CORETEXELA, Morris Mano" />
+  <meta name="author" content="CORETEXELA" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    .logo {
-      width: 140px;
-      height: auto;
-      margin-bottom: 20px;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(255, 214, 10, 0.6);
-    }
+  <!-- Open Graph -->
+  <meta property="og:title" content="CORETEXELA – Learn Digital Electronics & VLSI" />
+  <meta property="og:description" content="Free structured learning path from fundamentals to VLSI-ready concepts." />
+  <meta property="og:type" content="website" />
 
-    h1 {
-      font-size: 42px;
-      margin: 10px 0;
-      letter-spacing: 2px;
-    }
-
-    .tagline {
-      font-size: 18px;
-      opacity: 0.9;
-      margin-bottom: 40px;
-    }
-
-    .cta-btn {
-      background: #ffd60a;
-      color: #2a004f;
-      padding: 15px 36px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
-
-    .cta-btn:hover {
-      background: #ffea00;
-      transform: translateY(-3px);
-    }
-
-    .section {
-      padding: 60px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section h2 {
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: rgba(255,255,255,0.1);
-      padding: 25px;
-      border-radius: 16px;
-      text-align: left;
-    }
-
-    .card h3 {
-      color: #ffd60a;
-      margin-bottom: 10px;
-    }
-
-    footer {
-      padding: 20px;
-      font-size: 14px;
-      opacity: 0.8;
-    }
-  </style>
+  <!-- ✅ GLOBAL CSS (ROOT) -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-  <!-- HERO SECTION -->
-  <div class="hero">
-    <img src="logo.png" alt="CORETEXELA Logo" class="logo" />
-    <h1>CORETEXELA</h1>
-    <p class="tagline">Ignite Innovation For Future</p>
+<!-- ===============================
+     FLOATING SYMBOLS (HOME)
+================================ -->
+<div class="floating-symbols">
+  <span style="left:10%; animation-delay:0s;">+</span>
+  <span style="left:25%; animation-delay:5s;">∑</span>
+  <span style="left:40%; animation-delay:10s;">×</span>
+  <span style="left:55%; animation-delay:3s;">÷</span>
+  <span style="left:70%; animation-delay:8s;">⊕</span>
+  <span style="left:85%; animation-delay:1s;">∫</span>
+</div>
 
-    <!-- SINGLE ENTRY POINT -->
-    <a href="content/lessons/L001.html" class="cta-btn">
-      Start Learning
-    </a>
-  </div>
+<!-- ===============================
+     SIDEBAR
+================================ -->
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a class="active" href="index.html">Home</a>
+  <a href="content/lessons/L001.html">L001 – Introduction</a>
+  <a href="content/lessons/L002.html">L002 – Logic Gates</a>
+  <a href="content/lessons/L003.html">L003 – Boolean Algebra</a>
+</aside>
 
-  <!-- ABOUT -->
-  <div class="section">
-    <h2>What is CORETEXELA?</h2>
+<!-- ===============================
+     MAIN CONTENT
+================================ -->
+<main class="content">
+
+  <!-- HERO -->
+  <section class="lesson-card reveal">
+    <h1>Digital Electronics & VLSI Foundations</h1>
     <p>
-      CORETEXELA is a free learning platform designed to help students and engineers
-      understand VLSI and digital design concepts step by step — from beginner
-      fundamentals to industry-ready knowledge.
+      CORETEXELA is a free, structured learning platform designed to take you
+      from the basics of digital logic to VLSI-ready concepts using a
+      Morris Mano–style approach.
     </p>
-  </div>
+  </section>
 
-  <!-- PLATFORM HIGHLIGHTS -->
-  <div class="section">
-    <div class="cards">
-      <div class="card">
-        <h3>✨ Free & Open</h3>
-        <p>No fees. No paywalls. Knowledge should be accessible to everyone.</p>
-      </div>
+  <!-- WHAT YOU LEARN -->
+  <section class="lesson-card reveal">
+    <h2>What You’ll Learn</h2>
+    <ul>
+      <li>Binary systems & logic gates</li>
+      <li>Boolean algebra & simplification</li>
+      <li>Combinational and sequential circuits</li>
+      <li>Strong foundations for VLSI & embedded systems</li>
+    </ul>
+  </section>
 
-      <div class="card">
-        <h3>📚 Structured Lessons</h3>
-        <p>Carefully sequenced topics from basics to advanced concepts.</p>
-      </div>
+  <!-- CTA -->
+  <section class="lesson-card reveal">
+    <h2>Start Learning</h2>
+    <p>
+      Begin your journey with carefully structured lessons and build
+      concepts step by step.
+    </p>
+    <br />
+    <a class="nav-btn" href="content/lessons/L001.html">
+      🚀 Start Learning
+    </a>
+  </section>
 
-      <div class="card">
-        <h3>🎯 Guided Learning</h3>
-        <p>Clear explanations, visuals, and self-checks for confidence.</p>
-      </div>
+</main>
 
-      <div class="card">
-        <h3>🚀 Job-Oriented</h3>
-        <p>Concepts aligned with interviews, tools, and real design flows.</p>
-      </div>
-    </div>
-  </div>
+<!-- ===============================
+     REVEAL ANIMATION SCRIPT
+================================ -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
 
-  <!-- LEARNING PATH -->
-  <div class="section">
-    <h2>What You Will Learn</h2>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.15 });
 
-    <div class="cards">
-      <div class="card">
-        <h3>Beginner</h3>
-        <ul>
-          <li>Why VLSI?</li>
-          <li>Digital electronics fundamentals</li>
-          <li>Boolean algebra & number systems</li>
-          <li>Logic gates & flip-flops</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Intermediate</h3>
-        <ul>
-          <li>RTL concepts</li>
-          <li>Verilog basics</li>
-          <li>Simulation & waveforms</li>
-          <li>Synthesis flow</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>Pro Level</h3>
-        <ul>
-          <li>Timing concepts</li>
-          <li>STA basics</li>
-          <li>Physical design overview</li>
-          <li>Industry design flow</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    © 2025 CORETEXELA — Ignite Innovation For Future
-  </footer>
+  reveals.forEach(r => observer.observe(r));
+</script>
 
 </body>
 </html>
