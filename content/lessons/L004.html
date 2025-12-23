@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>L004 – Number Systems</title>
-<style>
-body{margin:0;font-family:Arial;background:#f6f6fb}
-.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
-.sidebar a{color:#fff;display:block;margin:10px 0}
-.container{margin-left:240px;padding:40px}
-.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px}
-.lesson-nav{display:flex;justify-content:space-between}
-.nav-btn{background:#4b0082;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none}
-</style>
+  <meta charset="UTF-8" />
+  <title>L004 – Number Systems</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<div class="sidebar">
-<a href="L001.html">L001</a><a href="L002.html">L002</a><a href="L003.html">L003</a>
-<a href="L004.html">L004</a><a href="L005.html">L005</a><a href="L006.html">L006</a>
-</div>
 
-<div class="container">
-<h1>Lesson 004 – Number Systems</h1>
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a href="L001.html">L001 – Intro</a>
+  <a href="L002.html">L002 – Logic Gates</a>
+  <a href="L003.html">L003 – Boolean Algebra</a>
+  <a class="active" href="L004.html">L004 – Number Systems</a>
+</aside>
 
-<div class="box">
-<ul>
-<li>Binary (Base 2)</li>
-<li>Decimal (Base 10)</li>
-<li>Octal (Base 8)</li>
-<li>Hexadecimal (Base 16)</li>
-</ul>
-</div>
+<main class="content">
 
-<div class="lesson-nav">
-<a class="nav-btn" href="L003.html">← Previous</a>
-<a class="nav-btn" href="L005.html">Next →</a>
-</div>
-</div>
+<section class="lesson-card reveal">
+  <h1>L004: Number Systems</h1>
+  <p>
+    Digital systems use different number systems to represent data efficiently.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Types</h2>
+  <ul>
+    <li>Decimal</li>
+    <li>Binary</li>
+    <li>Octal</li>
+    <li>Hexadecimal</li>
+  </ul>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Worked Example</h2>
+  <p>
+    (13)₁₀ = (1101)₂
+  </p>
+</section>
+
+<section class="lesson-card reveal nav">
+  <a class="nav-btn" href="L003.html">⬅ Previous</a>
+  <a class="nav-btn" href="L005.html">Next ➡</a>
+</section>
+
+</main>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
+</script>
+
 </body>
 </html>
