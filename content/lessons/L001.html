@@ -3,18 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <title>L001 – Introduction to Digital Electronics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../../logo.png">
   <link rel="apple-touch-icon" href="../../logo.png">
 
-  <link rel="stylesheet" href="../../styles.css" />
+  <!-- Global Styles -->
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body>
 
+<!-- Optional subtle symbols background -->
 <div class="lesson-symbols"></div>
 
+<!-- SIDEBAR -->
 <aside class="sidebar">
   <h2>CORETEXELA</h2>
   <a class="active" href="L001.html">L001 – Introduction</a>
@@ -25,36 +29,165 @@
   <a href="L006.html">L006 – Sequential Circuits</a>
 </aside>
 
+<!-- MAIN CONTENT -->
 <main class="content">
 
-<section class="lesson-card reveal">
-  <h1>L001: Introduction to Digital Electronics</h1>
-  <p>
-    Digital electronics deals with systems that operate using discrete signal
-    levels. These systems form the foundation of modern computing and electronics.
-  </p>
-</section>
+  <!-- INTRO -->
+  <section class="lesson-card reveal">
+    <h1>L001: Introduction to Digital Electronics</h1>
+    <p>
+      Digital Electronics is the foundation of all modern electronic systems.
+      From smartphones and computers to automobiles and satellites, nearly every
+      intelligent system today is built using digital principles.
+    </p>
+    <p>
+      In this lesson, you will understand <b>what digital electronics is</b>,
+      <b>why it replaced analog systems</b>, and <b>why it is the backbone of VLSI design</b>.
+    </p>
+  </section>
 
-<section class="lesson-card reveal">
-  <h2>Why Digital Systems?</h2>
-  <p>
-    Digital systems are reliable, noise-resistant, and easy to design using logic.
-  </p>
-</section>
+  <!-- WHAT IS DIGITAL -->
+  <section class="lesson-card reveal">
+    <h2>What is Digital Electronics?</h2>
+    <p>
+      Digital electronics deals with systems that operate using
+      <b>discrete signal levels</b> rather than continuously varying values.
+      These discrete levels are represented using <b>binary values</b>: 0 and 1.
+    </p>
+    <p>
+      Digital systems make clear decisions — ON or OFF, TRUE or FALSE.
+      This decisiveness is what makes them reliable and scalable.
+    </p>
+  </section>
 
-<section class="lesson-card reveal nav">
-  <a class="nav-btn" href="../../index.html">⬅ Home</a>
-  <a class="nav-btn" href="L002.html">Next ➡</a>
-</section>
+  <!-- ANALOG VS DIGITAL -->
+  <section class="lesson-card reveal">
+    <h2>Analog vs Digital: The Core Difference</h2>
+    <p>
+      Analog systems use continuously varying signals and are sensitive to noise.
+      Digital systems use fixed levels, making them far more robust.
+    </p>
+
+    <h3>Signal Representation</h3>
+    <pre style="color:#9ba3af; font-size:14px; line-height:1.5;">
+Analog Signal:
+Voltage
+  ^
+  |      ~~~~~~~~
+  |   ~~~~        ~~~~
+  | ~~~                ~~~
+  |____________________________> Time
+
+Digital Signal:
+Voltage
+  ^
+  |  ┌──────┐    ┌──────┐
+  |  │  1   │    │  1   │
+  |──┘      └────┘      └──
+  |  0
+  |____________________________> Time
+    </pre>
+
+    <p>
+      <b>Analogy:</b> A dimmer switch is analog (many levels),
+      while a light switch is digital (ON/OFF).
+    </p>
+  </section>
+
+  <!-- WHY DIGITAL WON -->
+  <section class="lesson-card reveal">
+    <h2>Why Did Digital Systems Replace Analog?</h2>
+    <ul>
+      <li><b>Noise Immunity:</b> Digital signals tolerate interference.</li>
+      <li><b>Reliability:</b> Binary decisions are predictable.</li>
+      <li><b>Storage:</b> Data can be stored without degradation.</li>
+      <li><b>Scalability:</b> Millions of circuits fit on one chip.</li>
+      <li><b>Programmability:</b> Same hardware, different functions.</li>
+    </ul>
+  </section>
+
+  <!-- WORKED EXAMPLE -->
+  <section class="lesson-card reveal">
+    <h2>Worked Example: Decision Making in Hardware</h2>
+    <p>
+      Consider a temperature-controlled fan. Instead of reacting to every
+      small change, the system uses a threshold.
+    </p>
+
+    <h3>Binary Decision Model</h3>
+    <pre style="color:#9ba3af; font-size:14px; line-height:1.6;">
+        ┌───────────────┐
+Input → │  Comparator   │ → Output
+        │ (Threshold)   │
+        └───────┬───────┘
+                │
+          ┌─────┴─────┐
+          │  1 (ON)   │  if Input > Threshold
+          │  0 (OFF)  │  if Input ≤ Threshold
+          └───────────┘
+    </pre>
+
+    <p>
+      This binary approach makes hardware systems fast, simple, and reliable.
+    </p>
+  </section>
+
+  <!-- INDUSTRY RELEVANCE -->
+  <section class="lesson-card reveal">
+    <h2>Industry Relevance</h2>
+    <ul>
+      <li>Microprocessors and microcontrollers</li>
+      <li>Memory devices (RAM, ROM, Flash)</li>
+      <li>Embedded and automotive systems</li>
+      <li>Communication hardware</li>
+      <li>VLSI and semiconductor chip design</li>
+    </ul>
+
+    <h3>Digital Electronics in a Chip</h3>
+    <pre style="color:#9ba3af; font-size:14px; line-height:1.6;">
+User Program
+     ↓
+Digital Logic (0 / 1)
+     ↓
+Logic Gates
+     ↓
+Flip-Flops & Registers
+     ↓
+Transistors
+     ↓
+Silicon Chip
+    </pre>
+
+    <p>
+      <b>Every transistor in a modern chip ultimately supports a binary decision.</b>
+    </p>
+  </section>
+
+  <!-- SELF CHECK -->
+  <section class="lesson-card reveal">
+    <h2>Quick Self-Check</h2>
+    <ul>
+      <li>Why are digital systems more noise-tolerant?</li>
+      <li>Why is binary representation ideal for hardware?</li>
+      <li>Where do you encounter digital decisions daily?</li>
+    </ul>
+  </section>
+
+  <!-- NAVIGATION -->
+  <section class="lesson-card reveal nav">
+    <a class="nav-btn" href="../../index.html">⬅ Home</a>
+    <a class="nav-btn" href="L002.html">Next ➡</a>
+  </section>
 
 </main>
 
+<!-- REVEAL ANIMATION -->
 <script>
-const r=document.querySelectorAll('.reveal');
-const o=new IntersectionObserver(e=>{
-  e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'));
-},{threshold:0.15});
-r.forEach(el=>o.observe(el));
+  const r = document.querySelectorAll('.reveal');
+  const o = new IntersectionObserver(e => {
+    e.forEach(x => x.isIntersecting && x.target.classList.add('show'));
+  }, { threshold: 0.15 });
+  r.forEach(el => o.observe(el));
 </script>
 
 </body>
