@@ -1,187 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Lesson 003 – Digital Electronics Refresher | CORETEXELA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f8f6ff;
-      color:#222;
-      line-height:1.7;
-      margin:0;
-      padding:0;
-    }
-
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:40px 20px;
-    }
-
-    h1,h2,h3{
-      color:#3b007a;
-    }
-
-    .meta{
-      background:#ece8ff;
-      padding:12px 18px;
-      border-radius:10px;
-      margin-bottom:30px;
-      font-size:14px;
-    }
-
-    .section{
-      margin-bottom:32px;
-    }
-
-    .box{
-      background:#ffffff;
-      padding:20px;
-      border-radius:14px;
-      border:1px solid #ddd;
-      margin-top:15px;
-    }
-
-    ul{
-      padding-left:20px;
-    }
-
-    footer{
-      margin-top:60px;
-      text-align:center;
-      font-size:14px;
-      color:#666;
-    }
-
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      margin-top:40px;
-    }
-
-    .nav a{
-      text-decoration:none;
-      background:#3b007a;
-      color:white;
-      padding:10px 20px;
-      border-radius:20px;
-      font-size:14px;
-    }
-  </style>
+<title>L003 – Digital Basics</title>
+<style>
+body{margin:0;font-family:Arial;background:#f7f6ff}
+.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
+.sidebar a{color:#fff;display:block;margin:10px 0;text-decoration:none}
+.container{margin-left:240px;padding:40px}
+.box{background:#fff;padding:20px;border-radius:12px}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="sidebar">
+<a href="L001.html">L001</a><a href="L002.html">L002</a><a href="L003.html">L003</a>
+<a href="L004.html">L004</a><a href="L005.html">L005</a><a href="L006.html">L006</a>
+<a href="../../lessons.html">← Back</a>
+</div>
 
-    <h1>Lesson 003 – Digital Electronics Refresher</h1>
-
-    <div class="meta">
-      <strong>Level:</strong> Beginner |
-      <strong>Stage:</strong> Digital Electronics |
-      <strong>Duration:</strong> 10–15 minutes
-    </div>
-
-    <div class="section">
-      <h2>Concept Overview</h2>
-      <div class="box">
-        <p>
-          Digital electronics deals with systems that use discrete values,
-          typically binary <strong>0</strong> and <strong>1</strong>,
-          to represent information.
-        </p>
-        <p>
-          These values correspond to voltage levels in hardware, making digital
-          systems reliable, scalable, and resistant to noise.
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Core Digital Concepts</h2>
-      <div class="box">
-        <ul>
-          <li><strong>Logic Gates:</strong> AND, OR, NOT form the basic building blocks</li>
-          <li><strong>Combinational Circuits:</strong> Output depends only on inputs</li>
-          <li><strong>Sequential Circuits:</strong> Output depends on inputs and past state</li>
-          <li><strong>Clock:</strong> Controls timing and synchronization</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Combinational vs Sequential Logic</h2>
-      <div class="box">
-        <p>
-          Combinational circuits produce outputs purely based on current inputs.
-          Examples include adders and multiplexers.
-        </p>
-        <p>
-          Sequential circuits store information using memory elements such as
-          latches and flip-flops and operate based on clock signals.
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Industry Relevance</h2>
-      <div class="box">
-        <p>
-          Digital electronics forms the foundation of RTL design, verification,
-          synthesis, and physical implementation in VLSI workflows.
-        </p>
-        <p>
-          A strong grasp of digital concepts is mandatory before learning
-          Verilog, timing analysis, or chip design flows.
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Key Takeaways</h2>
-      <div class="box">
-        <ul>
-          <li>Digital systems use binary logic</li>
-          <li>Logic gates are the building blocks of hardware</li>
-          <li>Sequential logic introduces memory and timing</li>
-          <li>Digital electronics underpins all VLSI design</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Self-Test</h2>
-      <div class="box">
-        <p>1. What is the key difference between combinational and sequential logic?</p>
-        <p>2. Why are digital systems preferred over analog in VLSI?</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Self-Test Solutions</h2>
-      <div class="box">
-        <p>
-          <strong>Answer 1:</strong> Sequential logic depends on past state and clock,
-          while combinational logic depends only on current inputs.
-        </p>
-        <p>
-          <strong>Answer 2:</strong> Digital systems are more noise-resistant,
-          scalable, and reliable.
-        </p>
-      </div>
-    </div>
-
-    <div class="nav">
-      <a href="L002.html">← Lesson 002</a>
-      <a href="L004.html">Next → Lesson 004</a>
-    </div>
-
-    <footer>
-      © 2025 CORETEXELA — Ignite Innovation For Future
-    </footer>
-
-  </div>
+<div class="container">
+<h1>Lesson 003 – Digital Electronics Refresher</h1>
+<div class="box">
+<p>Digital electronics deals with binary logic using 0 and 1.</p>
+<p>It forms the base for combinational and sequential circuits.</p>
+</div>
+</div>
 </body>
 </html>
