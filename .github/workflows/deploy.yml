@@ -4,12 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - '**'
-      - '!README.md'
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -18,38 +15,28 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Upload website files
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
 
       - name: Notify n8n webhook
         run: |
-          FILES=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
-          COMMIT="${{ github.event.head_commit.message }}"
-          DATE=$(date)
-
-          curl -X POST \
-          -H "Content-Type: application/json" \
-          -d "{\"commit\":\"$COMMIT\",\"time\":\"$DATE\",\"files\":\"$FILES\"}" \
-          https://coretexela.app.n8n.cloud/webhook/content-alert
-
+          curl -X POST -H "Content-Type: application/json" \
+          -d '{"status":"deploy_success","project":"CORETEXELA"}' \
+          https://coretexela.app.n8n.cloud/webhook/YOUR_WEBHOOK_ID
