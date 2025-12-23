@@ -1,242 +1,271 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>CORETEXELA | Ignite Innovation For Future</title>
+  <meta charset="UTF-8" />
+  <title>CORETEXELA | Ignite Innovation For Future</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-  body{
-    margin:0;
-    padding:0;
-    overflow:hidden;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    font-family:Arial, sans-serif;
-    text-align:center;
+  <style>
+    :root{
+      --purple:#3b007a;
+      --violet:#6a0dad;
+      --gold:#ffcc33;
+      --light:#ffffff;
+      --soft:#f5f0ff;
+    }
 
-    background:linear-gradient(145deg,#1b0033,#3b007a,#6a0dad,#9b30ff,#e6ad00,#ffcc33);
-    background-size:400% 400%;
-    animation:gradientShift 16s ease infinite;
-    color:#ffffff;
-    position:relative;
-  }
+    *{box-sizing:border-box;margin:0;padding:0;}
 
-  @keyframes gradientShift{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-  }
+    body{
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(145deg,#1b0033,#3b007a,#6a0dad);
+      color: var(--light);
+      min-height:100vh;
+      overflow-x:hidden;
+    }
 
-  #logo{
-    width:260px;
-    height:auto;
-    margin-top:-20px;
-    z-index:5;
-    filter:
-      drop-shadow(0 0 10px rgba(255,255,255,0.5))
-      drop-shadow(0 0 24px rgba(255,204,0,0.8));
-    animation:pulseLogo 3s infinite alternate ease-in-out;
-  }
+    /* Floating VLSI symbols (moderate) */
+    .symbol{
+      position:fixed;
+      font-size:22px;
+      color:rgba(255,204,51,0.25);
+      animation: float 18s linear infinite;
+      pointer-events:none;
+    }
 
-  @keyframes pulseLogo{
-    0%{transform:scale(1);}
-    100%{transform:scale(1.08);}
-  }
+    @keyframes float{
+      from{transform:translateY(110vh);}
+      to{transform:translateY(-120vh);}
+    }
 
-  h1{font-size:55px;margin:10px;letter-spacing:4px;z-index:5;}
-  h3{margin:4px;font-weight:normal;z-index:5;}
+    header{
+      text-align:center;
+      padding:70px 20px 50px;
+    }
 
-  #typewriter{
-    font-size:32px;
-    margin-top:20px;
-    border-right:4px solid rgba(255,255,255,0.9);
-    white-space:nowrap;
-    overflow:hidden;
-    width:0;
-    animation:typing 3s steps(20,end) forwards,cursorBlink .7s infinite;
-    z-index:5;
-  }
-  @keyframes typing{from{width:0;}to{width:260px;}}
-  @keyframes cursorBlink{50%{border-color:transparent;}}
+    header h1{
+      font-size:44px;
+      letter-spacing:2px;
+      margin-bottom:10px;
+    }
 
-  .no-float-zone{
-    position:absolute;
-    width:480px;
-    height:440px;
-    top:50%;
-    transform:translateY(-50%);
-    background:transparent;
-    z-index:4;
-  }
+    header h2{
+      font-size:18px;
+      font-weight:400;
+      opacity:.9;
+    }
 
-  /* chatbot button */
-  .chat-btn{
-    margin-top:25px;
-    padding:12px 32px;
-    border:none;
-    border-radius:26px;
-    background:#ffcc33;
-    color:#3d0066;
-    font-weight:bold;
-    cursor:pointer;
-    z-index:5;
-    box-shadow:0 0 14px rgba(255,204,0,0.7);
-    transition:.3s;
-  }
-  .chat-btn:hover{transform:scale(1.1);}
+    .cta{
+      margin-top:30px;
+    }
 
-  /* ************** modal chatbot ************** */
-  .modal{
-    position:fixed;
-    top:0; left:0;
-    width:100%; height:100%;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(4px);
-    z-index:10;
-  }
+    .cta button{
+      background:var(--gold);
+      border:none;
+      padding:14px 36px;
+      border-radius:30px;
+      font-size:16px;
+      font-weight:600;
+      color:#3b007a;
+      cursor:pointer;
+      box-shadow:0 0 18px rgba(255,204,51,.6);
+      transition:.3s;
+    }
 
-  .chat-box{
-    background:#ffffff;
-    padding:25px;
-    width:350px;
-    border-radius:20px;
-    color:#3d0066;
-    text-align:left;
-    box-shadow:0 0 18px rgba(255,204,0,0.8);
-  }
+    .cta button:hover{
+      transform:scale(1.08);
+    }
 
-  /* roadmap */
-  .timeline{
-    position:absolute;
-    bottom:35px;
-    display:flex;
-    gap:30px;
-    opacity:0;
-    animation:fadeIn 2s forwards 3s;
-    z-index:5;
-  }
+    section{
+      max-width:1000px;
+      margin:0 auto;
+      padding:60px 20px;
+    }
 
-  .step{
-    padding:10px 22px;
-    border-radius:22px;
-    background:rgba(0,0,0,0.28);
-    border:1px solid rgba(255,215,0,0.6);
-    color:#ffcc33;
-    transition:.3s;
-    cursor:pointer;
-  }
-  .step:hover{transform:scale(1.13);}
+    section h3{
+      font-size:28px;
+      margin-bottom:18px;
+      color:var(--gold);
+    }
 
-  @keyframes fadeIn{to{opacity:1;}}
+    section p{
+      font-size:16px;
+      line-height:1.7;
+      color:#eee;
+    }
 
-  /* floating symbols */
-  .symbol{
-    position:absolute;
-    font-size:30px;
-    color:rgba(255,215,0,0.85);
-    opacity:0.4;
-    animation:float 7.0s infinite ease-in-out;
-    pointer-events:none;
-  }
+    .highlights{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+      gap:30px;
+      margin-top:40px;
+    }
 
-  @keyframes float{
-    0%{transform:translateY(100vh) rotate(0deg);}
-    100%{transform:translateY(-120vh) rotate(360deg);}
-  }
+    .card{
+      background:rgba(255,255,255,0.08);
+      padding:24px;
+      border-radius:18px;
+      backdrop-filter: blur(6px);
+      border:1px solid rgba(255,255,255,.12);
+    }
 
-  /* particle trails following cursor */
-  .trail{
-    position:absolute;
-    width:6px;
-    height:6px;
-    border-radius:50%;
-    background:rgba(255,255,255,0.9);
-    pointer-events:none;
-    animation:trailFade 1s forwards;
-  }
+    .card h4{
+      margin-bottom:10px;
+      color:var(--gold);
+      font-size:18px;
+    }
 
-  @keyframes trailFade{
-    from{opacity:1;transform:scale(1);}
-    to{opacity:0;transform:scale(3);}
-  }
-</style>
+    .levels{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+      margin-top:30px;
+    }
+
+    ul{
+      padding-left:18px;
+      margin-top:10px;
+    }
+
+    li{
+      margin-bottom:6px;
+    }
+
+    .coming{
+      text-align:center;
+      padding:50px 20px;
+      background:rgba(0,0,0,.25);
+      border-top:1px solid rgba(255,255,255,.15);
+      border-bottom:1px solid rgba(255,255,255,.15);
+    }
+
+    footer{
+      text-align:center;
+      padding:40px 20px;
+      font-size:14px;
+      opacity:.85;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="no-float-zone"></div>
-
-<img src="logo.png" id="logo" />
-
-<h1>CORETEXELA</h1>
-<h3>Ignite Innovation For Future</h3>
-<div id="typewriter">Coming Soon…</div>
-
-<button class="chat-btn" onclick="document.getElementById('modal').style.display='flex'">
-  Launch AI Chatbot
-</button>
-
-<div id="modal" class="modal">
-  <div class="chat-box">
-    <b>CORETEXELA AI Agent 🤖</b><br><br>
-    <p>This chatbot backend will connect to:</p>
-    <ul>
-      <li>AI engine (LLM)</li>
-      <li>learning content database</li>
-      <li>course recommendation engine</li>
-      <li>student tracking automation</li>
-    </ul>
-    <button onclick="document.getElementById('modal').style.display='none'">Close</button>
-  </div>
-</div>
-
-<div class="timeline">
-  <div class="step" onclick="alert('Stage-1 already complete 🎉')">Stage-1 Setup</div>
-  <div class="step" onclick="alert('Stage-2 automations in progress 🚀')">Stage-2 Automations</div>
-  <div class="step" onclick="alert('Platform goes live in Stage-3 🔥')">Stage-3 Platform Live</div>
-</div>
-
+<!-- Floating symbols -->
 <script>
-// floating math symbols
-const symbols=["+","−","×","÷","%","="];
-for(let i=0;i<60;i++){
-  let span=document.createElement("span");
-  span.className="symbol";
-  span.innerText=symbols[Math.floor(Math.random()*symbols.length)];
-  let x,y;
-
-  do{
-    x=Math.random()*window.innerWidth;
-    y=Math.random()*window.innerHeight;
-  }while(
-    x>=(window.innerWidth/2-240)&&
-    x<=(window.innerWidth/2+240)&&
-    y>=(window.innerHeight/2-220)&&
-    y<=(window.innerHeight/2+220)
-  );
-
-  span.style.left=x+"px";
-  span.style.top=y+"px";
-  span.style.animationDelay=Math.random()*3+"s";
-  document.body.appendChild(span);
-}
-
-// cursor particle trails
-document.addEventListener("mousemove",e=>{
-  const dot=document.createElement("div");
-  dot.className="trail";
-  dot.style.left=e.pageX+"px";
-  dot.style.top=e.pageY+"px";
-  document.body.appendChild(dot);
-  setTimeout(()=>dot.remove(),900);
-});
+  const symbols=["Δ","λ","μ","+","−","×","÷","[7:0]","clk"];
+  for(let i=0;i<28;i++){
+    const s=document.createElement("div");
+    s.className="symbol";
+    s.innerText=symbols[Math.floor(Math.random()*symbols.length)];
+    s.style.left=Math.random()*100+"vw";
+    s.style.animationDelay=Math.random()*18+"s";
+    document.body.appendChild(s);
+  }
 </script>
+
+<header>
+  <h1>CORETEXELA</h1>
+  <h2>Ignite Innovation For Future</h2>
+
+  <div class="cta">
+    <button onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+      Learn More
+    </button>
+  </div>
+</header>
+
+<section id="about">
+  <h3>What is CORETEXELA?</h3>
+  <p>
+    CORETEXELA is a free learning platform designed to help students and engineers
+    understand VLSI and digital design concepts step-by-step — from beginner foundations
+    to industry-ready knowledge.
+    <br><br>
+    No shortcuts. No confusion. Just structured learning aligned with real semiconductor workflows.
+  </p>
+
+  <div class="highlights">
+    <div class="card">
+      <h4>✨ Free and Open</h4>
+      <p>No fees. No paywalls. Knowledge should be accessible to everyone.</p>
+    </div>
+    <div class="card">
+      <h4>📚 Structured Lessons</h4>
+      <p>Carefully sequenced topics from basics to advanced concepts.</p>
+    </div>
+    <div class="card">
+      <h4>📈 Guided Learning</h4>
+      <p>Clear explanations, visuals, and self-checks for confidence.</p>
+    </div>
+    <div class="card">
+      <h4>🧠 Job-Oriented</h4>
+      <p>Concepts aligned with interviews, tools, and real design flows.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h3>What You Will Learn</h3>
+
+  <div class="levels">
+    <div class="card">
+      <h4>Beginner</h4>
+      <ul>
+        <li>Why VLSI?</li>
+        <li>Digital electronics fundamentals</li>
+        <li>Boolean algebra & number systems</li>
+        <li>Logic gates & flip-flops</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Intermediate</h4>
+      <ul>
+        <li>RTL concepts</li>
+        <li>Verilog basics</li>
+        <li>Simulation & waveforms</li>
+        <li>Synthesis flow</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h4>Pro Level</h4>
+      <ul>
+        <li>Timing concepts</li>
+        <li>STA basics</li>
+        <li>Physical design overview</li>
+        <li>Industry design flow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="coming">
+  <h3>AI Study Assistant (Coming Soon)</h3>
+  <p>
+    CORETEXELA will introduce an AI-powered assistant to guide learning,
+    recommend lessons, and clarify concepts.
+    <br><br>
+    🚧 Currently under development.
+  </p>
+</div>
+
+<section>
+  <h3>Why VLSI?</h3>
+  <p>
+    Every modern device — smartphones, laptops, vehicles, data centers —
+    is powered by chips.
+    <br><br>
+    Learning VLSI means understanding how the digital world is built.
+    CORETEXELA exists to make that journey clear, structured, and accessible.
+  </p>
+</section>
+
+<footer>
+  <strong>CORETEXELA</strong><br>
+  Ignite Innovation For Future<br><br>
+  © 2025 CORETEXELA — All Rights Reserved
+</footer>
 
 </body>
 </html>
