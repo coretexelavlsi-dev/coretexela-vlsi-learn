@@ -3,21 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>L005 – Combinational Circuits</title>
+
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="apple-touch-icon" href="../../logo.png">
+
   <link rel="stylesheet" href="../../styles.css" />
 </head>
+
 <body>
 
-<div class="lesson-symbols">
-  <span style="left:60%;">⊕</span>
-</div>
+<div class="lesson-symbols"></div>
 
 <aside class="sidebar">
   <h2>CORETEXELA</h2>
-  <a href="L001.html">L001 – Intro</a>
+  <a href="L001.html">L001 – Introduction</a>
   <a href="L002.html">L002 – Logic Gates</a>
   <a href="L003.html">L003 – Boolean Algebra</a>
   <a href="L004.html">L004 – Number Systems</a>
   <a class="active" href="L005.html">L005 – Combinational Circuits</a>
+  <a href="L006.html">L006 – Sequential Circuits</a>
 </aside>
 
 <main class="content">
@@ -29,15 +33,6 @@
   </p>
 </section>
 
-<section class="lesson-card reveal">
-  <h2>Examples</h2>
-  <ul>
-    <li>Half Adder</li>
-    <li>Full Adder</li>
-    <li>Multiplexer</li>
-  </ul>
-</section>
-
 <section class="lesson-card reveal nav">
   <a class="nav-btn" href="L004.html">⬅ Previous</a>
   <a class="nav-btn" href="L006.html">Next ➡</a>
@@ -46,11 +41,11 @@
 </main>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+const r=document.querySelectorAll('.reveal');
+const o=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'));
 },{threshold:0.15});
-reveals.forEach(r=>observer.observe(r));
+r.forEach(el=>o.observe(el));
 </script>
 
 </body>
