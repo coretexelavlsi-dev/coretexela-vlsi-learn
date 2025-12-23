@@ -3,23 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>L002 – Logic Gates</title>
+
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="apple-touch-icon" href="../../logo.png">
+
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 
 <body>
 
-<div class="lesson-symbols">
-  <span style="left:15%; animation-delay:0s;">+</span>
-  <span style="left:35%; animation-delay:7s;">⊕</span>
-  <span style="left:55%; animation-delay:3s;">∑</span>
-  <span style="left:75%; animation-delay:11s;">×</span>
-</div>
+<div class="lesson-symbols"></div>
 
 <aside class="sidebar">
   <h2>CORETEXELA</h2>
-  <a href="L001.html">L001 – Intro</a>
+  <a href="L001.html">L001 – Introduction</a>
   <a class="active" href="L002.html">L002 – Logic Gates</a>
   <a href="L003.html">L003 – Boolean Algebra</a>
+  <a href="L004.html">L004 – Number Systems</a>
+  <a href="L005.html">L005 – Combinational Circuits</a>
+  <a href="L006.html">L006 – Sequential Circuits</a>
 </aside>
 
 <main class="content">
@@ -27,25 +29,18 @@
 <section class="lesson-card reveal">
   <h1>L002: Logic Gates</h1>
   <p>
-    Logic gates are the fundamental building blocks of digital circuits.
-    They perform basic logical operations on binary inputs.
+    Logic gates are basic building blocks of digital circuits that perform
+    logical operations on binary inputs.
   </p>
 </section>
 
 <section class="lesson-card reveal">
   <h2>Basic Gates</h2>
   <ul>
-    <li>AND Gate</li>
-    <li>OR Gate</li>
-    <li>NOT Gate</li>
+    <li>AND</li>
+    <li>OR</li>
+    <li>NOT</li>
   </ul>
-</section>
-
-<section class="lesson-card reveal">
-  <h2>Worked Example</h2>
-  <p>
-    AND gate output is 1 only when both inputs are 1.
-  </p>
 </section>
 
 <section class="lesson-card reveal nav">
@@ -56,11 +51,11 @@
 </main>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+const r=document.querySelectorAll('.reveal');
+const o=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'));
 },{threshold:0.15});
-reveals.forEach(r=>observer.observe(r));
+r.forEach(el=>o.observe(el));
 </script>
 
 </body>
