@@ -1,218 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Lesson 005 – Number System Conversions | CORETEXELA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f8f6ff;
-      color:#222;
-      line-height:1.7;
-      margin:0;
-      padding:0;
-    }
-
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:40px 20px;
-    }
-
-    h1,h2,h3{
-      color:#3b007a;
-    }
-
-    .meta{
-      background:#ece8ff;
-      padding:12px 18px;
-      border-radius:10px;
-      margin-bottom:30px;
-      font-size:14px;
-    }
-
-    .section{
-      margin-bottom:32px;
-    }
-
-    .box{
-      background:#ffffff;
-      padding:20px;
-      border-radius:14px;
-      border:1px solid #ddd;
-      margin-top:15px;
-    }
-
-    ul{
-      padding-left:20px;
-    }
-
-    footer{
-      margin-top:60px;
-      text-align:center;
-      font-size:14px;
-      color:#666;
-    }
-
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      margin-top:40px;
-    }
-
-    .nav a{
-      text-decoration:none;
-      background:#3b007a;
-      color:white;
-      padding:10px 20px;
-      border-radius:20px;
-      font-size:14px;
-    }
-
-    code{
-      background:#f0ecff;
-      padding:4px 6px;
-      border-radius:6px;
-      font-size:14px;
-    }
-  </style>
+<title>L005 – Conversions</title>
+<style>
+body{margin:0;font-family:Arial;background:#f7f6ff}
+.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
+.sidebar a{color:#fff;display:block;margin:10px 0}
+.container{margin-left:240px;padding:40px}
+.box{background:#fff;padding:20px;border-radius:12px}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="sidebar">
+<a href="L001.html">L001</a><a href="L002.html">L002</a><a href="L003.html">L003</a>
+<a href="L004.html">L004</a><a href="L005.html">L005</a><a href="L006.html">L006</a>
+<a href="../../lessons.html">← Back</a>
+</div>
 
-    <h1>Lesson 005 – Number System Conversions</h1>
-
-    <div class="meta">
-      <strong>Level:</strong> Beginner |
-      <strong>Stage:</strong> Digital Electronics |
-      <strong>Duration:</strong> 10–15 minutes
-    </div>
-
-    <div class="section">
-      <h2>Concept Overview</h2>
-      <div class="box">
-        <p>
-          Number system conversion is the process of converting a number from one
-          base (radix) to another. In digital electronics, conversions are required
-          because humans prefer decimal representation, while hardware operates
-          using binary.
-        </p>
-        <p>
-          Engineers also use octal and hexadecimal representations to simplify
-          binary values during design, debugging, and verification.
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Binary to Decimal Conversion</h2>
-      <div class="box">
-        <p>
-          Each binary digit is multiplied by powers of 2 based on its position.
-        </p>
-        <p>
-          Example:<br />
-          <code>(1101)<sub>2</sub></code> =
-          1×2³ + 1×2² + 0×2¹ + 1×2⁰ = <strong>13<sub>10</sub></strong>
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Decimal to Binary Conversion</h2>
-      <div class="box">
-        <p>
-          Decimal numbers are converted to binary by repeatedly dividing the
-          number by 2 and recording the remainders.
-        </p>
-        <p>
-          Example:<br />
-          <code>(25)<sub>10</sub></code> = <strong>(11001)<sub>2</sub></strong>
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Binary to Octal Conversion</h2>
-      <div class="box">
-        <p>
-          Binary numbers are grouped into sets of three bits starting from the
-          right.
-        </p>
-        <p>
-          Example:<br />
-          <code>(101101)<sub>2</sub></code> = <strong>(55)<sub>8</sub></strong>
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Binary to Hexadecimal Conversion</h2>
-      <div class="box">
-        <p>
-          Binary numbers are grouped into sets of four bits starting from the
-          right.
-        </p>
-        <p>
-          Example:<br />
-          <code>(11110000)<sub>2</sub></code> = <strong>(F0)<sub>16</sub></strong>
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Why Hexadecimal is Preferred</h2>
-      <div class="box">
-        <ul>
-          <li>Shorter and more readable representation</li>
-          <li>Direct mapping to binary</li>
-          <li>Commonly used in memory addressing</li>
-          <li>Simplifies debugging and verification</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Key Takeaways</h2>
-      <div class="box">
-        <ul>
-          <li>Binary is the base of all digital systems</li>
-          <li>Grouping simplifies octal and hexadecimal conversions</li>
-          <li>Conversions are essential for RTL and debugging</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Self-Test</h2>
-      <div class="box">
-        <p>1. Convert <code>(101011)<sub>2</sub></code> to decimal.</p>
-        <p>2. Convert <code>(64)<sub>10</sub></code> to binary.</p>
-        <p>3. Convert <code>(11110000)<sub>2</sub></code> to hexadecimal.</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Self-Test Solutions</h2>
-      <div class="box">
-        <p><strong>Answer 1:</strong> 43<sub>10</sub></p>
-        <p><strong>Answer 2:</strong> (1000000)<sub>2</sub></p>
-        <p><strong>Answer 3:</strong> (F0)<sub>16</sub></p>
-      </div>
-    </div>
-
-    <div class="nav">
-      <a href="L004.html">← Lesson 004</a>
-      <a href="L006.html">Next → Lesson 006</a>
-    </div>
-
-    <footer>
-      © 2025 CORETEXELA — Ignite Innovation For Future
-    </footer>
-
-  </div>
+<div class="container">
+<h1>Lesson 005 – Number System Conversions</h1>
+<div class="box">
+<p>Conversions allow communication between different number systems used in hardware.</p>
+</div>
+</div>
 </body>
-                                  </html>
+</html>
