@@ -2,105 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <title>CORETEXELA – Ignite Innovation For Future</title>
 
-  <title>CORETEXELA | Learn Digital Electronics & VLSI Fundamentals</title>
-
-  <!-- SEO -->
-  <meta name="description" content="CORETEXELA is a free learning platform for Digital Electronics and VLSI fundamentals inspired by Morris Mano. Learn logic gates, Boolean algebra, combinational and sequential circuits step by step." />
-  <meta name="keywords" content="Digital Electronics, VLSI, Logic Gates, Boolean Algebra, CORETEXELA, Morris Mano" />
-  <meta name="author" content="CORETEXELA" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CORETEXELA – Ignite Innovation For Future. A free learning platform for Digital Electronics and VLSI fundamentals." />
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="CORETEXELA – Learn Digital Electronics & VLSI" />
-  <meta property="og:description" content="Free structured learning path from fundamentals to VLSI-ready concepts." />
-  <meta property="og:type" content="website" />
-
-  <!-- ✅ GLOBAL CSS (ROOT) -->
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Home-only overrides */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home {
+      text-align: center;
+      max-width: 520px;
+    }
+
+    .home img {
+      width: 110px;
+      border-radius: 18px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 0 30px rgba(250,204,21,0.35);
+    }
+
+    .home h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .home p {
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .start-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #1a0033;
+      padding: 0.8rem 2.2rem;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(250,204,21,0.4);
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ===============================
-     FLOATING SYMBOLS (HOME)
-================================ -->
-<div class="floating-symbols">
-  <span style="left:10%; animation-delay:0s;">+</span>
-  <span style="left:25%; animation-delay:5s;">∑</span>
-  <span style="left:40%; animation-delay:10s;">×</span>
-  <span style="left:55%; animation-delay:3s;">÷</span>
-  <span style="left:70%; animation-delay:8s;">⊕</span>
-  <span style="left:85%; animation-delay:1s;">∫</span>
-</div>
+  <div class="home reveal">
+    <!-- If you have logo image -->
+    <!-- <img src="logo.png" alt="CORETEXELA Logo"> -->
 
-<!-- ===============================
-     SIDEBAR
-================================ -->
-<aside class="sidebar">
-  <h2>CORETEXELA</h2>
-  <a class="active" href="index.html">Home</a>
-  <a href="content/lessons/L001.html">L001 – Introduction</a>
-  <a href="content/lessons/L002.html">L002 – Logic Gates</a>
-  <a href="content/lessons/L003.html">L003 – Boolean Algebra</a>
-</aside>
+    <h1>CORETEXELA</h1>
+    <p>Ignite Innovation For Future</p>
 
-<!-- ===============================
-     MAIN CONTENT
-================================ -->
-<main class="content">
-
-  <!-- HERO -->
-  <section class="lesson-card reveal">
-    <h1>Digital Electronics & VLSI Foundations</h1>
-    <p>
-      CORETEXELA is a free, structured learning platform designed to take you
-      from the basics of digital logic to VLSI-ready concepts using a
-      Morris Mano–style approach.
-    </p>
-  </section>
-
-  <!-- WHAT YOU LEARN -->
-  <section class="lesson-card reveal">
-    <h2>What You’ll Learn</h2>
-    <ul>
-      <li>Binary systems & logic gates</li>
-      <li>Boolean algebra & simplification</li>
-      <li>Combinational and sequential circuits</li>
-      <li>Strong foundations for VLSI & embedded systems</li>
-    </ul>
-  </section>
-
-  <!-- CTA -->
-  <section class="lesson-card reveal">
-    <h2>Start Learning</h2>
-    <p>
-      Begin your journey with carefully structured lessons and build
-      concepts step by step.
-    </p>
-    <br />
-    <a class="nav-btn" href="content/lessons/L001.html">
-      🚀 Start Learning
+    <a class="start-btn" href="content/lessons/L001.html">
+      Start Learning
     </a>
-  </section>
+  </div>
 
-</main>
-
-<!-- ===============================
-     REVEAL ANIMATION SCRIPT
-================================ -->
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.15 });
-
-  reveals.forEach(r => observer.observe(r));
+const r=document.querySelector('.reveal');
+setTimeout(()=>r.classList.add('show'),100);
 </script>
 
 </body>
