@@ -1,39 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>L003 – Digital Electronics</title>
-<style>
-body{margin:0;font-family:Arial;background:#f6f6fb}
-.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
-.sidebar a{color:#fff;display:block;margin:10px 0}
-.container{margin-left:240px;padding:40px}
-.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px}
-.lesson-nav{display:flex;justify-content:space-between}
-.nav-btn{background:#4b0082;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none}
-</style>
+  <meta charset="UTF-8" />
+  <title>L003 – Boolean Algebra</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<div class="sidebar">
-<a href="L001.html">L001</a><a href="L002.html">L002</a><a href="L003.html">L003</a>
-<a href="L004.html">L004</a><a href="L005.html">L005</a><a href="L006.html">L006</a>
-</div>
 
-<div class="container">
-<h1>Lesson 003 – Digital Electronics Basics</h1>
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a href="L001.html">L001 – Intro</a>
+  <a href="L002.html">L002 – Logic Gates</a>
+  <a class="active" href="L003.html">L003 – Boolean Algebra</a>
+</aside>
 
-<div class="box">
-<p>
-Digital electronics uses binary numbers (0 and 1) to represent data.
-These values correspond to OFF and ON states of transistors.
-</p>
-</div>
+<main class="content">
 
-<div class="lesson-nav">
-<a class="nav-btn" href="L002.html">← Previous</a>
-<a class="nav-btn" href="L004.html">Next →</a>
-</div>
-</div>
+<section class="lesson-card reveal">
+  <h1>L003: Boolean Algebra</h1>
+  <p>
+    Boolean algebra is the mathematical foundation of digital logic design.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Concept Intuition</h2>
+  <p>
+    Boolean algebra uses binary variables and logical operations
+    to simplify digital circuits.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Basic Laws</h2>
+  <ul>
+    <li>Commutative Law</li>
+    <li>Associative Law</li>
+    <li>Distributive Law</li>
+  </ul>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>De Morgan’s Theorems</h2>
+  <p>
+    These theorems help convert AND expressions to OR expressions and vice versa.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Worked Example</h2>
+  <p>
+    Simplify: A + A·B = A
+  </p>
+</section>
+
+<section class="lesson-card reveal nav">
+  <a class="nav-btn" href="L002.html">⬅ Previous</a>
+  <a class="nav-btn" href="L004.html">Next ➡</a>
+</section>
+
+</main>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
+</script>
+
 </body>
 </html>
