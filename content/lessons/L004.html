@@ -1,227 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Lesson 004 – Number Systems | CORETEXELA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <style>
-    body{
-      font-family: Arial, sans-serif;
-      background:#f8f6ff;
-      color:#222;
-      line-height:1.7;
-      margin:0;
-      padding:0;
-    }
-
-    .container{
-      max-width:900px;
-      margin:auto;
-      padding:40px 20px;
-    }
-
-    h1,h2,h3{
-      color:#3b007a;
-    }
-
-    .meta{
-      background:#ece8ff;
-      padding:12px 18px;
-      border-radius:10px;
-      margin-bottom:30px;
-      font-size:14px;
-    }
-
-    .section{
-      margin-bottom:32px;
-    }
-
-    .box{
-      background:#ffffff;
-      padding:20px;
-      border-radius:14px;
-      border:1px solid #ddd;
-      margin-top:15px;
-    }
-
-    ul{
-      padding-left:20px;
-    }
-
-    table{
-      width:100%;
-      border-collapse:collapse;
-      margin-top:10px;
-    }
-
-    th, td{
-      border:1px solid #ccc;
-      padding:10px;
-      text-align:center;
-    }
-
-    th{
-      background:#ece8ff;
-    }
-
-    footer{
-      margin-top:60px;
-      text-align:center;
-      font-size:14px;
-      color:#666;
-    }
-
-    .nav{
-      display:flex;
-      justify-content:space-between;
-      margin-top:40px;
-    }
-
-    .nav a{
-      text-decoration:none;
-      background:#3b007a;
-      color:white;
-      padding:10px 20px;
-      border-radius:20px;
-      font-size:14px;
-    }
-  </style>
+<title>L004 – Number Systems</title>
+<style>
+body{margin:0;font-family:Arial;background:#f7f6ff}
+.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
+.sidebar a{color:#fff;display:block;margin:10px 0}
+.container{margin-left:240px;padding:40px}
+.box{background:#fff;padding:20px;border-radius:12px}
+</style>
 </head>
 
 <body>
-  <div class="container">
+<div class="sidebar">
+<a href="L001.html">L001</a><a href="L002.html">L002</a><a href="L003.html">L003</a>
+<a href="L004.html">L004</a><a href="L005.html">L005</a><a href="L006.html">L006</a>
+<a href="../../lessons.html">← Back</a>
+</div>
 
-    <h1>Lesson 004 – Number Systems</h1>
-
-    <div class="meta">
-      <strong>Level:</strong> Beginner |
-      <strong>Stage:</strong> Digital Electronics |
-      <strong>Duration:</strong> 10–15 minutes
-    </div>
-
-    <div class="section">
-      <h2>Concept Overview</h2>
-      <div class="box">
-        <p>
-          A number system defines how numbers are represented using a specific
-          set of symbols called digits. In digital electronics, number systems
-          are essential because hardware understands only binary values.
-        </p>
-        <p>
-          Different number systems are used for human readability, hardware
-          implementation, and compact representation.
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Types of Number Systems</h2>
-      <div class="box">
-        <ul>
-          <li><strong>Decimal:</strong> Base 10, digits 0–9</li>
-          <li><strong>Binary:</strong> Base 2, digits 0 and 1</li>
-          <li><strong>Octal:</strong> Base 8, digits 0–7</li>
-          <li><strong>Hexadecimal:</strong> Base 16, digits 0–9 and A–F</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Radix (Base)</h2>
-      <div class="box">
-        <p>
-          The radix of a number system is the total number of unique digits it
-          uses. Radix determines the positional value of digits.
-        </p>
-
-        <table>
-          <tr>
-            <th>Number System</th>
-            <th>Radix</th>
-          </tr>
-          <tr>
-            <td>Decimal</td>
-            <td>10</td>
-          </tr>
-          <tr>
-            <td>Binary</td>
-            <td>2</td>
-          </tr>
-          <tr>
-            <td>Octal</td>
-            <td>8</td>
-          </tr>
-          <tr>
-            <td>Hexadecimal</td>
-            <td>16</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Positional Representation</h2>
-      <div class="box">
-        <p>
-          The value of each digit depends on its position and the radix of the
-          number system.
-        </p>
-        <p>
-          Example:<br />
-          (1011)<sub>2</sub> = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 11<sub>10</sub>
-        </p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Why Binary is Used</h2>
-      <div class="box">
-        <ul>
-          <li>Matches transistor ON/OFF states</li>
-          <li>High noise immunity</li>
-          <li>Simpler and reliable circuit design</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Key Takeaways</h2>
-      <div class="box">
-        <ul>
-          <li>Number systems define data representation</li>
-          <li>Binary is the foundation of digital hardware</li>
-          <li>Radix determines positional value</li>
-          <li>Hex and octal simplify binary handling</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Self-Test</h2>
-      <div class="box">
-        <p>1. What is the radix of the octal number system?</p>
-        <p>2. Why is binary preferred in digital electronics?</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h2>Self-Test Solutions</h2>
-      <div class="box">
-        <p><strong>Answer 1:</strong> 8</p>
-        <p><strong>Answer 2:</strong> Hardware supports two stable states (ON/OFF).</p>
-      </div>
-    </div>
-
-    <div class="nav">
-      <a href="L003.html">← Lesson 003</a>
-      <a href="L005.html">Next → Lesson 005</a>
-    </div>
-
-    <footer>
-      © 2025 CORETEXELA — Ignite Innovation For Future
-    </footer>
-
-  </div>
+<div class="container">
+<h1>Lesson 004 – Number Systems</h1>
+<div class="box">
+<ul>
+<li>Binary</li>
+<li>Decimal</li>
+<li>Octal</li>
+<li>Hexadecimal</li>
+</ul>
+</div>
+</div>
 </body>
 </html>
