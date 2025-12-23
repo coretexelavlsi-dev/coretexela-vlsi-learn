@@ -3,12 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>L001 – Introduction to Digital Electronics</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../../styles.css" />
 </head>
 
 <body>
 
-<!-- ===== Sidebar ===== -->
+<!-- Floating symbols (lesson subtle) -->
+<div class="lesson-symbols">
+  <span style="left:15%; animation-delay:0s;">+</span>
+  <span style="left:35%; animation-delay:7s;">⊕</span>
+  <span style="left:55%; animation-delay:3s;">∑</span>
+  <span style="left:75%; animation-delay:11s;">×</span>
+</div>
+
 <aside class="sidebar">
   <h2>CORETEXELA</h2>
   <a class="active" href="L001.html">L001 – Intro</a>
@@ -16,88 +23,53 @@
   <a href="L003.html">L003 – Boolean Algebra</a>
 </aside>
 
-<!-- ===== Main Content ===== -->
 <main class="content">
 
-  <!-- Title -->
-  <section class="lesson-card reveal">
-    <h1>L001: Introduction to Digital Electronics</h1>
-    <p>
-      Digital electronics is the foundation of all modern computing systems.
-      It operates using <span class="key-term">binary signals</span> rather than continuous values.
-    </p>
-  </section>
+<section class="lesson-card reveal">
+  <h1>L001: Introduction to Digital Electronics</h1>
+  <p>
+    Digital electronics is the foundation of all modern computing systems.
+    It operates using binary signals rather than continuous values.
+  </p>
+</section>
 
-  <!-- Concept -->
-  <section class="lesson-card reveal">
-    <h2>Concept Intuition</h2>
-    <p>
-      Unlike analog systems that vary smoothly, digital systems work with
-      only two states: <b>0</b> and <b>1</b>.
-      This makes digital circuits more reliable, noise-resistant, and scalable.
-    </p>
-  </section>
+<section class="lesson-card reveal">
+  <h2>Concept Intuition</h2>
+  <p>
+    Digital systems work with only two states: <b>0</b> and <b>1</b>.
+    This makes them reliable, noise-resistant, and scalable.
+  </p>
+</section>
 
-  <!-- Definition -->
-  <section class="lesson-card reveal">
-    <h2>Formal Definition</h2>
-    <p>
-      <span class="key-term">Digital Electronics</span> is the study of electronic systems
-      that use discrete signal levels to represent information,
-      typically using binary numbers.
-    </p>
-  </section>
+<section class="lesson-card reveal">
+  <h2>Formal Definition</h2>
+  <p>
+    Digital Electronics is the study of electronic systems that use discrete
+    signal levels to represent information, typically using binary numbers.
+  </p>
+</section>
 
-  <!-- Example -->
-  <section class="lesson-card reveal">
-    <h2>Worked Example</h2>
-    <p>
-      A light switch is a real-world digital system:
-    </p>
-    <ul>
-      <li>OFF → 0</li>
-      <li>ON → 1</li>
-    </ul>
-  </section>
+<section class="lesson-card reveal">
+  <h2>Worked Example</h2>
+  <ul>
+    <li>OFF → 0</li>
+    <li>ON → 1</li>
+  </ul>
+</section>
 
-  <!-- Applications -->
-  <section class="lesson-card reveal">
-    <h2>Applications</h2>
-    <ul>
-      <li>Microprocessors</li>
-      <li>Memory systems</li>
-      <li>Embedded controllers</li>
-      <li>Communication devices</li>
-    </ul>
-  </section>
-
-  <!-- Checkpoint -->
-  <section class="lesson-card reveal">
-    <h2>Checkpoint</h2>
-    <p><b>Q:</b> Why are digital systems preferred over analog?</p>
-    <p><b>A:</b> They are more robust, easier to design, and less affected by noise.</p>
-  </section>
-
-  <!-- Navigation -->
-  <section class="lesson-card reveal nav">
-    <a class="nav-btn disabled">⬅ Previous</a>
-    <a class="nav-btn" href="L002.html">Next ➡</a>
-  </section>
+<section class="lesson-card reveal nav">
+  <a class="nav-btn disabled">⬅ Previous</a>
+  <a class="nav-btn" href="L002.html">Next ➡</a>
+</section>
 
 </main>
 
-<!-- ===== Reveal Script ===== -->
 <script>
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('show');
-      }
-    });
-  }, { threshold: 0.15 });
-
-  reveals.forEach(r => observer.observe(r));
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
 </script>
 
 </body>
