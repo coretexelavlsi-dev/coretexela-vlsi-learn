@@ -1,46 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>L002 – Applications | CORETEXELA</title>
-<style>
-body{margin:0;font-family:Arial;background:#f6f6fb}
-.sidebar{position:fixed;width:220px;height:100vh;background:#2a004f;padding:20px}
-.sidebar a{color:#fff;display:block;margin:10px 0;text-decoration:none}
-.sidebar a:hover{color:#ffd60a}
-.container{margin-left:240px;padding:40px}
-.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px}
-.lesson-nav{display:flex;justify-content:space-between;margin-top:40px}
-.nav-btn{background:#4b0082;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none}
-</style>
+  <meta charset="UTF-8" />
+  <title>L002 – Logic Gates</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
-<div class="sidebar">
-<a href="L001.html">L001</a>
-<a href="L002.html">L002</a>
-<a href="L003.html">L003</a>
-<a href="L004.html">L004</a>
-<a href="L005.html">L005</a>
-<a href="L006.html">L006</a>
-</div>
 
-<div class="container">
-<h1>Lesson 002 – Applications of Chips</h1>
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a href="L001.html">L001 – Intro</a>
+  <a class="active" href="L002.html">L002 – Logic Gates</a>
+  <a href="L003.html">L003 – Boolean Algebra</a>
+</aside>
 
-<div class="box">
-<ul>
-<li>Consumer electronics</li>
-<li>Automotive systems</li>
-<li>Medical equipment</li>
-<li>AI & data centers</li>
-</ul>
-</div>
+<main class="content">
 
-<div class="lesson-nav">
-<a class="nav-btn" href="L001.html">← Previous</a>
-<a class="nav-btn" href="L003.html">Next →</a>
-</div>
-</div>
+<section class="lesson-card reveal">
+  <h1>L002: Logic Gates</h1>
+  <p>
+    Logic gates are the basic building blocks of all digital circuits.
+    They operate on binary inputs to produce a binary output.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Concept Intuition</h2>
+  <p>
+    Logic gates perform simple logical decisions such as AND, OR, and NOT.
+    Complex digital systems are built by combining these simple gates.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Formal Definition</h2>
+  <p>
+    A <span class="key-term">logic gate</span> is an electronic circuit that
+    implements a Boolean function.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Basic Gates</h2>
+  <ul>
+    <li>AND Gate</li>
+    <li>OR Gate</li>
+    <li>NOT Gate</li>
+  </ul>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Worked Example</h2>
+  <p>
+    AND Gate: Output is 1 only when both inputs are 1.
+  </p>
+</section>
+
+<section class="lesson-card reveal">
+  <h2>Checkpoint</h2>
+  <p><b>Q:</b> Which gate inverts its input?</p>
+  <p><b>A:</b> NOT gate.</p>
+</section>
+
+<section class="lesson-card reveal nav">
+  <a class="nav-btn" href="L001.html">⬅ Previous</a>
+  <a class="nav-btn" href="L003.html">Next ➡</a>
+</section>
+
+</main>
+
+<script>
+const reveals=document.querySelectorAll('.reveal');
+const observer=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+},{threshold:0.15});
+reveals.forEach(r=>observer.observe(r));
+</script>
+
 </body>
 </html>
