@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>L006 – Sequential Circuits</title>
+
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="apple-touch-icon" href="../../logo.png">
+
   <link rel="stylesheet" href="../../styles.css" />
 </head>
+
 <body>
 
-<div class="lesson-symbols">
-  <span style="left:45%;">∑</span>
-</div>
+<div class="lesson-symbols"></div>
 
 <aside class="sidebar">
   <h2>CORETEXELA</h2>
-  <a href="L001.html">L001 – Intro</a>
+  <a href="L001.html">L001 – Introduction</a>
   <a href="L002.html">L002 – Logic Gates</a>
   <a href="L003.html">L003 – Boolean Algebra</a>
   <a href="L004.html">L004 – Number Systems</a>
@@ -26,7 +29,7 @@
 <section class="lesson-card reveal">
   <h1>L006: Sequential Circuits</h1>
   <p>
-    Sequential circuits depend on present inputs and past outputs (memory).
+    Sequential circuits depend on both present inputs and past states.
   </p>
 </section>
 
@@ -38,11 +41,11 @@
 </main>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+const r=document.querySelectorAll('.reveal');
+const o=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'));
 },{threshold:0.15});
-reveals.forEach(r=>observer.observe(r));
+r.forEach(el=>o.observe(el));
 </script>
 
 </body>
