@@ -1,62 +1,104 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>L001 – Why VLSI? | CORETEXELA</title>
-
-<style>
-body{margin:0;font-family:Arial;background:#f6f6fb;color:#222}
-.sidebar{position:fixed;left:0;top:0;width:220px;height:100vh;background:#2a004f;padding:20px}
-.sidebar h3{color:#ffd60a}
-.sidebar a{display:block;color:#fff;text-decoration:none;margin:10px 0}
-.sidebar a:hover{color:#ffd60a}
-.container{margin-left:240px;padding:40px}
-.box{background:#fff;padding:20px;border-radius:12px;margin-bottom:20px}
-.lesson-nav{display:flex;justify-content:flex-end;margin-top:40px}
-.nav-btn{background:#4b0082;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none}
-.nav-btn:hover{background:#ffd60a;color:#000}
-</style>
+  <meta charset="UTF-8" />
+  <title>L001 – Introduction to Digital Electronics</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
-<div class="sidebar">
-<h3>Lessons</h3>
-<a href="L001.html">L001 – Why VLSI?</a>
-<a href="L002.html">L002 – Applications</a>
-<a href="L003.html">L003 – Digital Basics</a>
-<a href="L004.html">L004 – Number Systems</a>
-<a href="L005.html">L005 – Conversions</a>
-<a href="L006.html">L006 – Data Ranges</a>
-</div>
+<!-- ===== Sidebar ===== -->
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a class="active" href="L001.html">L001 – Intro</a>
+  <a href="L002.html">L002 – Logic Gates</a>
+  <a href="L003.html">L003 – Boolean Algebra</a>
+</aside>
 
-<div class="container">
-<h1>Lesson 001 – Why VLSI?</h1>
+<!-- ===== Main Content ===== -->
+<main class="content">
 
-<div class="box">
-<p>
-VLSI (Very Large Scale Integration) is the technology that allows millions
-to billions of transistors to be fabricated on a single silicon chip.
-</p>
-<p>
-Modern electronics such as smartphones, computers, and AI systems exist
-because of VLSI technology.
-</p>
-</div>
+  <!-- Title -->
+  <section class="lesson-card reveal">
+    <h1>L001: Introduction to Digital Electronics</h1>
+    <p>
+      Digital electronics is the foundation of all modern computing systems.
+      It operates using <span class="key-term">binary signals</span> rather than continuous values.
+    </p>
+  </section>
 
-<div class="box">
-<h3>Why VLSI is Important</h3>
-<ul>
-<li>Reduces size and power consumption</li>
-<li>Improves performance</li>
-<li>Drives semiconductor industry growth</li>
-</ul>
-</div>
+  <!-- Concept -->
+  <section class="lesson-card reveal">
+    <h2>Concept Intuition</h2>
+    <p>
+      Unlike analog systems that vary smoothly, digital systems work with
+      only two states: <b>0</b> and <b>1</b>.
+      This makes digital circuits more reliable, noise-resistant, and scalable.
+    </p>
+  </section>
 
-<div class="lesson-nav">
-<a class="nav-btn" href="L002.html">Next →</a>
-</div>
-</div>
+  <!-- Definition -->
+  <section class="lesson-card reveal">
+    <h2>Formal Definition</h2>
+    <p>
+      <span class="key-term">Digital Electronics</span> is the study of electronic systems
+      that use discrete signal levels to represent information,
+      typically using binary numbers.
+    </p>
+  </section>
+
+  <!-- Example -->
+  <section class="lesson-card reveal">
+    <h2>Worked Example</h2>
+    <p>
+      A light switch is a real-world digital system:
+    </p>
+    <ul>
+      <li>OFF → 0</li>
+      <li>ON → 1</li>
+    </ul>
+  </section>
+
+  <!-- Applications -->
+  <section class="lesson-card reveal">
+    <h2>Applications</h2>
+    <ul>
+      <li>Microprocessors</li>
+      <li>Memory systems</li>
+      <li>Embedded controllers</li>
+      <li>Communication devices</li>
+    </ul>
+  </section>
+
+  <!-- Checkpoint -->
+  <section class="lesson-card reveal">
+    <h2>Checkpoint</h2>
+    <p><b>Q:</b> Why are digital systems preferred over analog?</p>
+    <p><b>A:</b> They are more robust, easier to design, and less affected by noise.</p>
+  </section>
+
+  <!-- Navigation -->
+  <section class="lesson-card reveal nav">
+    <a class="nav-btn disabled">⬅ Previous</a>
+    <a class="nav-btn" href="L002.html">Next ➡</a>
+  </section>
+
+</main>
+
+<!-- ===== Reveal Script ===== -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  }, { threshold: 0.15 });
+
+  reveals.forEach(r => observer.observe(r));
+</script>
 
 </body>
 </html>
