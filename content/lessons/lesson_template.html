@@ -1,131 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Lesson XXX – Title</title>
+  <meta charset="UTF-8" />
+  <title>Lesson XXX – Lesson Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f6f6fb;
-      color: #333;
-    }
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="apple-touch-icon" href="../../logo.png">
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-
-    h1 {
-      color: #4b0082;
-    }
-
-    .breadcrumb {
-      font-size: 14px;
-      color: #777;
-      margin-bottom: 15px;
-    }
-
-    .meta {
-      background: #ece9ff;
-      padding: 12px 16px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      font-size: 14px;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    section h2 {
-      color: #4b0082;
-      margin-bottom: 10px;
-    }
-
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 50px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      background: #4b0082;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 20px;
-    }
-  </style>
+  <!-- Global styles -->
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body>
 
-<div class="container">
+<!-- Subtle background symbols (optional, non-intrusive) -->
+<div class="lesson-symbols"></div>
 
-  <p class="breadcrumb">
-    Beginner → Digital Electronics → Lesson XXX
-  </p>
+<!-- SIDEBAR (STANDARD – DO NOT CHANGE STRUCTURE) -->
+<aside class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a href="L001.html">L001 – Introduction</a>
+  <a href="L002.html">L002 – Logic Gates</a>
+  <a href="L003.html">L003 – Boolean Algebra</a>
+  <a href="L004.html">L004 – Number Systems</a>
+  <a href="L005.html">L005 – Combinational Circuits</a>
+  <a href="L006.html">L006 – Sequential Circuits</a>
+</aside>
 
-  <h1>Lesson XXX – Lesson Title</h1>
+<!-- MAIN CONTENT -->
+<main class="content">
 
-  <div class="meta">
-    Level: Beginner | Stage: Digital Electronics | Duration: 10–15 minutes
-  </div>
+  <!-- LESSON HEADER -->
+  <section class="lesson-card reveal">
+    <h1>Lesson XXX: Lesson Title</h1>
+    <p>
+      Briefly explain what this lesson is about and why it is important.
+      (2–3 lines max)
+    </p>
+  </section>
 
-  <section>
+  <!-- CONCEPT OVERVIEW -->
+  <section class="lesson-card reveal">
     <h2>Concept Overview</h2>
-    <div class="box">
-      <p>
-        Write a clear explanation of the lesson topic here.
-        Explain *why* this concept exists and *where* it is used.
-      </p>
-    </div>
+    <p>
+      Introduce the core idea clearly.
+      Focus on intuition and reasoning before formulas.
+      Answer: <b>Why does this concept exist?</b>
+    </p>
   </section>
 
-  <section>
+  <!-- KEY CONCEPTS -->
+  <section class="lesson-card reveal">
     <h2>Key Concepts</h2>
-    <div class="box">
-      <ul>
-        <li>Concept 1</li>
-        <li>Concept 2</li>
-        <li>Concept 3</li>
-      </ul>
-    </div>
+    <ul>
+      <li>Key idea 1</li>
+      <li>Key idea 2</li>
+      <li>Key idea 3</li>
+    </ul>
   </section>
 
-  <section>
+  <!-- WORKED EXAMPLE -->
+  <section class="lesson-card reveal">
+    <h2>Worked Example</h2>
+    <p>
+      Walk through one simple example step by step.
+      Keep it intuitive and learner-friendly.
+    </p>
+  </section>
+
+  <!-- INDUSTRY RELEVANCE -->
+  <section class="lesson-card reveal">
     <h2>Industry Relevance</h2>
-    <div class="box">
-      <p>
-        Explain how this topic appears in real VLSI / digital design workflows.
-      </p>
-    </div>
+    <p>
+      Explain where this concept appears in real
+      digital design, RTL, or VLSI workflows.
+    </p>
   </section>
 
-  <section>
+  <!-- QUICK SELF-CHECK -->
+  <section class="lesson-card reveal">
     <h2>Quick Self-Check</h2>
-    <div class="box">
-      <p>Ask 1–2 simple questions here.</p>
-    </div>
+    <ul>
+      <li>Question 1</li>
+      <li>Question 2</li>
+    </ul>
   </section>
 
-  <div class="nav">
-    <a href="L00X.html">← Previous</a>
-    <a href="L00Y.html">Next →</a>
-  </div>
+  <!-- NAVIGATION -->
+  <section class="lesson-card reveal nav">
+    <a class="nav-btn" href="L00X.html">⬅ Previous</a>
+    <a class="nav-btn" href="L00Y.html">Next ➡</a>
+  </section>
 
-</div>
+</main>
+
+<!-- REVEAL ANIMATION SCRIPT -->
+<script>
+  const r = document.querySelectorAll('.reveal');
+  const o = new IntersectionObserver(e => {
+    e.forEach(x => x.isIntersecting && x.target.classList.add('show'));
+  }, { threshold: 0.15 });
+  r.forEach(el => o.observe(el));
+</script>
 
 </body>
 </html>
