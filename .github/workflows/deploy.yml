@@ -24,10 +24,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Pages
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload site
+      - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
@@ -37,6 +37,12 @@ jobs:
 
       - name: Notify n8n webhook
         run: |
-          curl -X POST -H "Content-Type: application/json" \
-          -d '{"status":"deploy_success","project":"CORETEXELA"}' \
-          https://coretexela.app.n8n.cloud/webhook/YOUR_WEBHOOK_ID
+          curl -X POST \
+          -H "Content-Type: application/json" \
+          -d '{
+            "project": "CORETEXELA",
+            "status": "deploy_success",
+            "branch": "main",
+            "timestamp": "'"$(date -u +"%Y-%m-%dT%H:%M:%SZ")"'"
+          }' \
+          https://coretexela.app.n8n.cloud/webhook/0880b90a-873f-4e7c-9175-a40b8342a56c
