@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <title>L003 – Boolean Algebra</title>
+
+  <link rel="icon" type="image/png" href="../../logo.png">
+  <link rel="apple-touch-icon" href="../../logo.png">
+
   <link rel="stylesheet" href="../../styles.css" />
 </head>
+
 <body>
 
-<div class="lesson-symbols">
-  <span style="left:25%;">∑</span>
-  <span style="left:70%;">+</span>
-</div>
+<div class="lesson-symbols"></div>
 
 <aside class="sidebar">
   <h2>CORETEXELA</h2>
-  <a href="L001.html">L001 – Intro</a>
+  <a href="L001.html">L001 – Introduction</a>
   <a href="L002.html">L002 – Logic Gates</a>
   <a class="active" href="L003.html">L003 – Boolean Algebra</a>
+  <a href="L004.html">L004 – Number Systems</a>
+  <a href="L005.html">L005 – Combinational Circuits</a>
+  <a href="L006.html">L006 – Sequential Circuits</a>
 </aside>
 
 <main class="content">
@@ -24,24 +29,14 @@
 <section class="lesson-card reveal">
   <h1>L003: Boolean Algebra</h1>
   <p>
-    Boolean algebra is the mathematical foundation of digital logic design.
+    Boolean algebra provides a mathematical framework for analyzing and
+    simplifying digital logic circuits.
   </p>
 </section>
 
 <section class="lesson-card reveal">
   <h2>Basic Laws</h2>
-  <ul>
-    <li>Commutative Law</li>
-    <li>Associative Law</li>
-    <li>Distributive Law</li>
-  </ul>
-</section>
-
-<section class="lesson-card reveal">
-  <h2>Worked Example</h2>
-  <p>
-    A + A·B = A
-  </p>
+  <p>A + A·B = A</p>
 </section>
 
 <section class="lesson-card reveal nav">
@@ -52,11 +47,11 @@
 </main>
 
 <script>
-const reveals=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver(e=>{
-  e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('show');});
+const r=document.querySelectorAll('.reveal');
+const o=new IntersectionObserver(e=>{
+  e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'));
 },{threshold:0.15});
-reveals.forEach(r=>observer.observe(r));
+r.forEach(el=>o.observe(el));
 </script>
 
 </body>
