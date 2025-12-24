@@ -1,137 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>L001 – Introduction to Digital Electronics | CORETEXELA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Global CSS -->
-  <link rel="stylesheet" href="../../styles.css" />
+  <meta charset="UTF-8">
+  <title>L001 – Introduction to Digital Electronics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="../../logo.png">
+  <link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body>
 
-<div class="layout">
+<div class="sidebar">
+  <h2>CORETEXELA</h2>
+  <a class="active" href="L001.html">L001 – Introduction</a>
+  <a href="L002.html">L002 – Logic Gates</a>
+  <a href="L003.html">L003 – Boolean Algebra</a>
+  <a href="L004.html">L004 – Number Systems</a>
+  <a href="L005.html">L005 – Combinational Circuits</a>
+  <a href="L006.html">L006 – Sequential Circuits</a>
+</div>
 
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <h2 class="brand">CORETEXELA</h2>
-    <nav>
-      <a class="active" href="L001.html">L001 – Introduction</a>
-      <a href="L002.html">L002 – Logic Gates</a>
-      <a href="L003.html">L003 – Boolean Algebra</a>
-      <a href="L004.html">L004 – Number Systems</a>
-      <a href="L005.html">L005 – Combinational Circuits</a>
-      <a href="L006.html">L006 – Sequential Circuits</a>
-    </nav>
-  </aside>
+<div class="content">
 
-  <!-- MAIN CONTENT -->
-  <main class="content">
+  <div class="lesson-card">
+    <h1>L001: Introduction to Digital Electronics</h1>
+    <p>
+      Digital electronics deals with systems that operate using discrete signal
+      levels instead of continuous values. These systems form the foundation of
+      modern computing, embedded systems, and VLSI design.
+    </p>
+  </div>
 
-    <!-- HEADER -->
-    <section class="lesson-card">
-      <h1>L001: Introduction to Digital Electronics</h1>
-      <p class="subtitle">
-        Digital electronics forms the foundation of all modern computing systems.
-        It operates using discrete signal levels instead of continuous values.
-      </p>
-    </section>
+  <div class="lesson-card">
+    <h2>Why Digital Systems?</h2>
+    <ul>
+      <li>High noise immunity</li>
+      <li>Reliable and repeatable operation</li>
+      <li>Scalable for complex hardware systems</li>
+    </ul>
+  </div>
 
-    <!-- CONCEPT -->
-    <section class="lesson-card reveal">
-      <h2>Concept Intuition</h2>
-      <p>
-        Unlike analog systems, which vary smoothly, digital systems operate
-        using only two states: <b>0</b> and <b>1</b>. This binary approach
-        enables high reliability, noise immunity, and scalability.
-      </p>
-    </section>
+  <div class="lesson-card">
+    <h2>Binary Decision Model (Industry View)</h2>
+    <p>
+      Real hardware systems use threshold-based decision blocks such as
+      comparators and Schmitt triggers.
+    </p>
 
-    <!-- ANALOG vs DIGITAL -->
-    <section class="lesson-card reveal">
-      <h2>Industry View: Signal Representation</h2>
+    <div class="diagram">
+Input ──▶ [ Comparator / Threshold ] ──▶ Output
 
-<pre class="diagram">
-Analog Signal (Sensor Output)
-Voltage
-  |        /\/\/\/\/\/\
-  |      /\/           \/
-  |_____/__________________ Time
+If Input > Threshold  →  Logic 1 (ON)
+If Input ≤ Threshold  →  Logic 0 (OFF)
+    </div>
 
-Digital Signal (Logic Level)
-Voltage
-  |   ┌─────┐   ┌─────┐
-  |   │  1  │   │  1  │
-  |___┘     └___┘     └___ Time
-        0         1
-</pre>
+    <p class="note">
+      This binary decision approach enables fast, reliable hardware operation
+      across wide voltage and temperature ranges.
+    </p>
+  </div>
 
-      <p class="note">
-        Digital systems intentionally restrict signals to two voltage ranges
-        to ensure predictable behavior and robust hardware operation.
-      </p>
-    </section>
+  <div class="lesson-card">
+    <h2>Industry Relevance</h2>
+    <ul>
+      <li>CPU control logic</li>
+      <li>Memory enable signals</li>
+      <li>Sensor threshold detection</li>
+      <li>Power management ICs</li>
+    </ul>
+  </div>
 
-    <!-- DECISION MAKING -->
-    <section class="lesson-card reveal">
-      <h2>Worked Example: Decision Making in Hardware</h2>
-      <p>
-        Consider a temperature-controlled fan. Instead of reacting to every
-        small fluctuation, the system uses a threshold to decide ON or OFF.
-      </p>
-    </section>
-
-    <!-- INDUSTRY COMPARATOR -->
-    <section class="lesson-card reveal">
-      <h3 class="industry-title">Industry View: Comparator-Based Decision</h3>
-
-<pre class="diagram">
-Output
-  1 ───────────────┐
-                   │
-                   │
-  0 ───────────────┴────────────── Input
-                     Threshold Voltage (Vref)
-</pre>
-
-      <p class="note">
-        In real hardware, this behavior is implemented using voltage comparators
-        or Schmitt trigger circuits to convert analog signals into clean logic levels.
-      </p>
-    </section>
-
-    <!-- CHIP VIEW -->
-    <section class="lesson-card reveal">
-      <h2>Industry View: Digital Logic Inside a Chip</h2>
-
-<pre class="diagram">
-Application / Software
-        ↓
-Instruction Decoder
-        ↓
-Combinational Logic
-        ↓
-Registers & Flip-Flops
-        ↓
-Transistor Network
-        ↓
-Silicon Chip
-</pre>
-
-      <p class="note">
-        This layered abstraction allows engineers to design complex systems
-        without dealing with transistor-level details at every stage.
-      </p>
-    </section>
-
-    <!-- NAVIGATION -->
-    <section class="lesson-card nav-bar">
+  <div class="lesson-card">
+    <div class="nav">
       <a class="nav-btn" href="../../index.html">← Home</a>
       <a class="nav-btn" href="L002.html">Next →</a>
-    </section>
-
-  </main>
+    </div>
+  </div>
 
 </div>
 
