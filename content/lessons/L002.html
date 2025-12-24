@@ -2,61 +2,166 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>L002 – Logic Gates</title>
+  <title>L002 – Logic Gates | CORETEXELA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" href="../../logo.png">
-  <link rel="apple-touch-icon" href="../../logo.png">
-
+  <!-- Global CSS -->
   <link rel="stylesheet" href="../../styles.css" />
 </head>
 
 <body>
 
-<div class="lesson-symbols"></div>
+<div class="layout">
 
-<aside class="sidebar">
-  <h2>CORETEXELA</h2>
-  <a href="L001.html">L001 – Introduction</a>
-  <a class="active" href="L002.html">L002 – Logic Gates</a>
-  <a href="L003.html">L003 – Boolean Algebra</a>
-  <a href="L004.html">L004 – Number Systems</a>
-  <a href="L005.html">L005 – Combinational Circuits</a>
-  <a href="L006.html">L006 – Sequential Circuits</a>
-</aside>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2 class="brand">CORETEXELA</h2>
+    <nav>
+      <a href="L001.html">L001 – Introduction</a>
+      <a class="active" href="L002.html">L002 – Logic Gates</a>
+      <a href="L003.html">L003 – Boolean Algebra</a>
+      <a href="L004.html">L004 – Number Systems</a>
+      <a href="L005.html">L005 – Combinational Circuits</a>
+      <a href="L006.html">L006 – Sequential Circuits</a>
+    </nav>
+  </aside>
 
-<main class="content">
+  <!-- MAIN CONTENT -->
+  <main class="content">
 
-<section class="lesson-card reveal">
-  <h1>L002: Logic Gates</h1>
-  <p>
-    Logic gates are basic building blocks of digital circuits that perform
-    logical operations on binary inputs.
-  </p>
-</section>
+    <!-- HEADER -->
+    <section class="lesson-card">
+      <h1>L002: Logic Gates</h1>
+      <p class="subtitle">
+        Logic gates are the fundamental building blocks of all digital systems.
+        Every processor, controller, and memory device is constructed using
+        combinations of logic gates.
+      </p>
+    </section>
 
-<section class="lesson-card reveal">
-  <h2>Basic Gates</h2>
-  <ul>
-    <li>AND</li>
-    <li>OR</li>
-    <li>NOT</li>
-  </ul>
-</section>
+    <!-- WHAT IS A LOGIC GATE -->
+    <section class="lesson-card reveal">
+      <h2>What is a Logic Gate?</h2>
+      <p>
+        A logic gate is a digital circuit that performs a basic logical operation
+        on one or more binary inputs and produces a single binary output.
+      </p>
+      <p>
+        Inputs and outputs follow binary logic:
+        <b>0 = LOW / FALSE</b>, <b>1 = HIGH / TRUE</b>.
+      </p>
+    </section>
 
-<section class="lesson-card reveal nav">
-  <a class="nav-btn" href="L001.html">⬅ Previous</a>
-  <a class="nav-btn" href="L003.html">Next ➡</a>
-</section>
+    <!-- INDUSTRY VIEW -->
+    <section class="lesson-card reveal">
+      <h2>Industry View: Logic Gate Symbol Language</h2>
+      <p>
+        In industry and academia, logic gates are represented using
+        standardized symbols. Engineers communicate designs using
+        these symbols instead of equations.
+      </p>
+    </section>
 
-</main>
+    <!-- AND GATE -->
+    <section class="lesson-card reveal">
+      <h3 class="industry-title">AND Gate</h3>
 
-<script>
-const r=document.querySelectorAll('.reveal');
-const o=new IntersectionObserver(e=>{
-  e.forEach(x=>x.isIntersecting&&x.target.classList.add('show'));
-},{threshold:0.15});
-r.forEach(el=>o.observe(el));
-</script>
+<pre class="diagram">
+A ───┐
+     │
+     ├─── AND ─── Y
+B ───┘
+
+Y = A · B
+</pre>
+
+      <p class="note">
+        Output is HIGH only when <b>both inputs are HIGH</b>.
+      </p>
+    </section>
+
+    <!-- OR GATE -->
+    <section class="lesson-card reveal">
+      <h3 class="industry-title">OR Gate</h3>
+
+<pre class="diagram">
+A ───┐
+     │
+     ├─── OR ─── Y
+B ───┘
+
+Y = A + B
+</pre>
+
+      <p class="note">
+        Output is HIGH if <b>any one input is HIGH</b>.
+      </p>
+    </section>
+
+    <!-- NOT GATE -->
+    <section class="lesson-card reveal">
+      <h3 class="industry-title">NOT Gate (Inverter)</h3>
+
+<pre class="diagram">
+A ───▷○─── Y
+
+Y = A̅
+</pre>
+
+      <p class="note">
+        Output is the logical complement of the input.
+      </p>
+    </section>
+
+    <!-- TRUTH TABLE VIEW -->
+    <section class="lesson-card reveal">
+      <h2>Industry View: Truth Table Representation</h2>
+
+<pre class="diagram">
+A  B | AND  OR
+------------
+0  0 |  0    0
+0  1 |  0    1
+1  0 |  0    1
+1  1 |  1    1
+</pre>
+
+      <p class="note">
+        Truth tables are used to verify correctness before hardware implementation.
+      </p>
+    </section>
+
+    <!-- WHERE USED -->
+    <section class="lesson-card reveal">
+      <h2>Where Logic Gates Are Used</h2>
+      <ul>
+        <li>Arithmetic units (adders, multipliers)</li>
+        <li>Control logic in processors</li>
+        <li>Decision-making circuits</li>
+        <li>Memory address decoding</li>
+        <li>Embedded system controllers</li>
+      </ul>
+    </section>
+
+    <!-- QUICK CHECK -->
+    <section class="lesson-card reveal">
+      <h2>Quick Self-Check</h2>
+      <ul>
+        <li>Why is the AND gate critical in decision logic?</li>
+        <li>Which gate is used to invert control signals?</li>
+        <li>How do truth tables help hardware verification?</li>
+      </ul>
+    </section>
+
+    <!-- NAVIGATION -->
+    <section class="lesson-card nav-bar">
+      <a class="nav-btn" href="L001.html">← Previous</a>
+      <a class="nav-btn" href="L003.html">Next →</a>
+    </section>
+
+  </main>
+
+</div>
 
 </body>
 </html>
